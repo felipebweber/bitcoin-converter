@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var labelCoin: UILabel!
-    @IBOutlet weak var labelValue: UILabel!
+    @IBOutlet weak var labelPrice: UILabel!
+    @IBOutlet weak var labelCurency: UILabel!
     @IBOutlet weak var currentPicker: UIPickerView!
     
     var coinManager = CoinManager()
@@ -50,8 +50,8 @@ extension ViewController: UIPickerViewDelegate {
 extension ViewController: CoinManagerDelegate {
     func didUpdatePrice(price: String, currency: String) {
         DispatchQueue.main.async {
-            self.labelCoin.text = currency
-            self.labelValue.text = price
+            self.labelPrice.text = price
+            self.labelCurency.text = currency
         }
     }
     

@@ -18,26 +18,23 @@ class CoinManager {
     
     let baseString = "https://rest.coinapi.io/v1/exchangerate/BTC"
     let api = "84FBBDB5-F410-4E60-A6F9-374DEDE43216#"
-    //BRL?apikey=84FBBDB5-F410-4E60-A6F9-374DEDE43216#
     
     let currentArray = ["AUD", "BRL", "CAD", "CNY", "EUR", "GBP", "HKD", "USD"]
-    
-//    https://rest.coinapi.io/v1/exchangerate/BTC/BRL?apikey=84FBBDB5-F410-4E60-A6F9-374DEDE43216#
     
     func fetchCoinPrice(for currency: String) {
         let urlString = "\(baseString)/\(currency)?apikey=\(api)"
         
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, _, error) in
+            let task = session.dataTask(with: url) { [weak self] (data, _, error) in
                 if error != nil {
                     return
                 }
                 
                 if let data = data {
-                    if let bitcoinPrice = self.parseJSON(data) {
+                    if let bitcoinPrice = self?.parseJSON(data) {
                         let priceString = String(format: "%.2f", bitcoinPrice)
-                        self.delegate?.didUpdatePrice(price: priceString, currency: currency)
+                        self?.delegate?.didUpdatePrice(price: priceString, currency: currency)
                     }
                 }
             }
@@ -50,7 +47,6 @@ class CoinManager {
         
         let decodeData = try? decoder.decode(CoinData.self, from: data)
         guard let lastPrice = decodeData?.rate else { return nil }
-        print("Data \(lastPrice)")
         return lastPrice
     }
 }
