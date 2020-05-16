@@ -26,17 +26,12 @@ class CoinManager {
         
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { [weak self] (data, _, error) in
-                if error != nil {
-                    return
-                }
-                
-                if let data = data {
-                    if let bitcoinPrice = self?.parseJSON(data) {
-                        let priceString = String(format: "%.2f", bitcoinPrice)
-                        self?.delegate?.didUpdatePrice(price: priceString, currency: currency)
-                    }
-                }
+            let task = session.dataTask(with: url) { [weak self] (data, _, _) in
+                guard let data = data else { return }
+                guard let self = self else { return }
+                guard let bitcoinPrice = self.parseJSON(data) else { return }
+                let priceString = String(format: "%.2f", bitcoinPrice)
+                self.delegate?.didUpdatePrice(price: priceString, currency: currency)
             }
             task.resume()
         }
