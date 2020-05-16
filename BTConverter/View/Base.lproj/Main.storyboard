@@ -94,6 +94,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="currentPicker" destination="WvP-v1-rhM" id="Z6j-d4-3ua"/>
+                        <outlet property="labelCoin" destination="E22-Oj-4oI" id="UDh-Ah-zvH"/>
+                        <outlet property="labelValue" destination="39f-t1-scq" id="fTe-Tv-3k6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
