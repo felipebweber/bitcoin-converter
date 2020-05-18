@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import BTConverter
+@testable import bitcoin_converter
 
 class BTConverterTests: XCTestCase {
 
