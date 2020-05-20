@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -16,11 +17,18 @@ class ViewController: UIViewController {
     
     var coinManager = CoinManager()
     
+//    var context: NSManagedObjectContext {
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        return appDelegate.persistentContainer.viewContext
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         coinManager.delegate = self
         currentPicker.delegate = self
         currentPicker.dataSource = self
+        
+        coinManager.fetchCoinPrice(for: "USD")
     }
 
 }
@@ -39,7 +47,9 @@ extension ViewController: UIPickerViewDataSource {
 extension ViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let select = coinManager.currentArray[row]
-        coinManager.fetchCoinPrice(for: select)
+        print("Select: \(select)")
+        coinManager.retreiveData(currency: select)
+//        coinManager.fetchCoinPrice(for: select)
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -54,6 +64,4 @@ extension ViewController: CoinManagerDelegate {
             self.labelCurency.text = currency
         }
     }
-    
-    
 }
