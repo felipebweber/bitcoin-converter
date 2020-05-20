@@ -1,5 +1,5 @@
 # bitcoin-converter
-É um app de consulta do valor de um bitcoin para as sequintes moedas: 
+É um app de consulta do valor de um bitcoin para as sequintes moedas:
 
 * USD -> Dólar
 * AUD -> Dólar Australiano
@@ -38,6 +38,10 @@
 - Linkedin at [@felipebweber] (https://www.linkedin.com/in/felipebweber)
 - Twitch at [@felipebweber] (https://www.twitch.tv/felipebweber)
 
+
+## 📧 Contact
+
+- Email at weberecomp@gmail.com
 
 ## 📝 License
 

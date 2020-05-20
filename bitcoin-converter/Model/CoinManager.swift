@@ -28,9 +28,9 @@ class CoinManager {
     
     let baseString = "https://blockchain.info/ticker"
     
-    let currentArray = ["AUD", "BRL", "CAD", "CNY", "EUR", "GBP", "HKD", "USD"]
+    let currentArray = ["USD", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "DKK", "EUR", "GBP", "HKD", "INR", "ISK", "JPY", "KRW", "NZD", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD"]
     
-    func fetchCoinPrice(for currency: String) {
+    func fetchCoinPrice() {
         let urlString = "\(baseString)"
         
         if let url = URL(string: urlString) {
@@ -50,7 +50,6 @@ class CoinManager {
         
         guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else { return }
         guard let dictionary = json as? [String: AnyObject] else { return }
-//        print(dictionary)
         for (key, value) in dictionary {
             guard let val = value["last"] as? Double else { return }
             print("Currency: \(key) value: \(val)")
@@ -60,6 +59,7 @@ class CoinManager {
 }
 
 extension CoinManager {
+    
     func save(currency: String, price: Double) {
         
         var coinEntity: NSManagedObject?
@@ -88,7 +88,7 @@ extension CoinManager {
     }
     
     func retreiveData(currency: String) {
-        print("Recebe: \(currency)")
+
         let fetchRequest: NSFetchRequest<CoinEntity> = CoinEntity.fetchRequest()
         let sortCurrency = NSSortDescriptor(key: "currency", ascending: true)
         fetchRequest.sortDescriptors = [sortCurrency]
@@ -102,8 +102,8 @@ extension CoinManager {
                 guard let currencyResult = result.currency else { return }
                 
                 if currencyResult == currency {
-                    print(currencyResult)
-                    self.delegate?.didUpdatePrice(price: "\(result.price)", currency: currencyResult)
+                    let priceString = toCurrencyFormat(price: result.price)
+                    self.delegate?.didUpdatePrice(price: priceString, currency: currencyResult)
                 }
             }
 
@@ -113,7 +113,8 @@ extension CoinManager {
         
     }
     
-    func retrieve() -> [CoinEntity]{
+    func retrieve() -> [CoinEntity] {
+        
         let fetchRequest: NSFetchRequest<CoinEntity> = CoinEntity.fetchRequest()
         let sortCurrency = NSSortDescriptor(key: "currency", ascending: true)
         fetchRequest.sortDescriptors = [sortCurrency]
@@ -126,7 +127,18 @@ extension CoinManager {
         } catch {
             print(error.localizedDescription)
         }
+        
         guard let result = manageResult?.fetchedObjects else { return []}
         return result
+    }
+    
+    func toCurrencyFormat(price: Double) -> String {
+        
+        let currencyFormat = NumberFormatter()
+        currencyFormat.usesGroupingSeparator = true
+        currencyFormat.numberStyle = NumberFormatter.Style.decimal
+        currencyFormat.locale = Locale.current
+        guard let priceString = currencyFormat.string(from: NSNumber(value: price)) else { return ""}
+        return priceString
     }
 }
