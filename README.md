@@ -27,7 +27,7 @@
 
 ---
 <h2 align="center">
-<img src="screen-shot/1.png" width="200" height="356" />
+<img src="screen-shot/0.png" width="200" height="356" />
 </h2>
 
 ## 🔖 API
