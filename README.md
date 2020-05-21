@@ -30,6 +30,8 @@
 <img src="screen-shot/1.png" width="200" height="356" />
 </h2>
 
+## 🔖 API
+https://blockchain.info/ticker
 
 ## 📌 Support
 

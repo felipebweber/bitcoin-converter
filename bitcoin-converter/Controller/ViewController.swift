@@ -17,13 +17,16 @@ class ViewController: UIViewController {
     
     var coinManager = CoinManager()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         coinManager.delegate = self
         currentPicker.delegate = self
         currentPicker.dataSource = self
         
         coinManager.fetchCoinPrice()
+        coinManager.retreiveData(currency: "USD")
     }
 
 }
