@@ -7,9 +7,43 @@
 //
 
 import XCTest
+import CoreData
+import Cuckoo
+
 @testable import bitcoin_converter
 
 class CoinManagerTests: XCTestCase {
-
-
+    
+    let mock = MockCoinManager()
+    
+    
+    
+    //let spy = MockCoinManager().withEnabledDefaultImplementation(<#T##stub: CoinManager##CoinManager#>)
+    //let spy = MockCoinManager().withEnabledSuperclassSpy()
+    
+    
+    
+//    var manageResult: NSFetchedResultsController<CoinEntity>?
+    
+//    let coinManager = CoinManager()
+    
+    override func setUp() {
+        stub(mock) { (stub) in
+            when(stub.fetchCoinPrice()).thenCallRealImplementation()
+            }
+        }
+    
+//    stub(coinManager) { (coinManager) in
+//        when(coinManager.fetchCoinPrice()).thenReturn([])
+//    }
+    
+    func testRequestUrl() {
+        
+        mock.enableDefaultImplementation(mock)
+        
+        when(mock.currentArray.count)
+//        stub(mock) { (stub) in
+//            when(stub.fetchCoinPrice()).thenDoNothing()
+//        }
+    }
 }

@@ -149,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				55D13A6624773B3C00A56E79 /* GeneratedMocks.swift */,
-				55D13A5C247730E200A56E79 /* Info.plist */,
 				55D13A6824773BAF00A56E79 /* CoinManagerTests.swift */,
+				55D13A5C247730E200A56E79 /* Info.plist */,
 			);
 			path = "bitcoin-converterTests";
 			sourceTree = "<group>";
