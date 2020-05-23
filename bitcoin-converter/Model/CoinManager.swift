@@ -18,6 +18,8 @@ class CoinManager {
     
     weak var delegate: CoinManagerDelegate?
     
+    var coinApiTeste = CoinAPI()
+    
     var manageResult: NSFetchedResultsController<CoinEntity>?
     
     //Acesso ao contexto
@@ -26,34 +28,24 @@ class CoinManager {
         return appDelegate.persistentContainer.viewContext
     }
     
-    let baseString = "https://blockchain.info/ticker"
-    
     let currentArray = ["USD", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "DKK", "EUR", "GBP", "HKD", "INR", "ISK", "JPY", "KRW", "NZD", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD"]
     
     func fetchCoinPrice() {
-        let urlString = "\(baseString)"
         
-        if let url = URL(string: urlString) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { [weak self] (data, _, _) in
-                if let data = data {
-                    DispatchQueue.main.async {
-                        guard (self?.parseJSON(data)) != nil else { return }
-                    }
-                }
+        coinApiTeste.fetchCoinRequest { (dictionay) in
+            DispatchQueue.main.async {
+                self.parseJSON(dictionay)
             }
-            task.resume()
         }
+        
     }
     
-    func parseJSON(_ data: Data) {
+    func parseJSON(_ dictionary: Dictionary<String, Any>) {
         
-        guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else { return }
-        guard let dictionary = json as? [String: AnyObject] else { return }
         for (key, value) in dictionary {
-            guard let val = value["last"] as? Double else { return }
-            print("Currency: \(key) value: \(val)")
-            save(currency: key, price: val)
+            guard let val = value as? Dictionary<String, Any> else { return }
+            guard let valueSafe = val["last"] as? Double else { return }
+            save(currency: key, price: valueSafe)
         }
     }
 }
@@ -88,12 +80,12 @@ extension CoinManager {
     }
     
     func retreiveData(currency: String) {
-
+        
         let fetchRequest: NSFetchRequest<CoinEntity> = CoinEntity.fetchRequest()
         let sortCurrency = NSSortDescriptor(key: "currency", ascending: true)
         fetchRequest.sortDescriptors = [sortCurrency]
         
-         manageResult = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        manageResult = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         do {
             let results = try context.fetch(fetchRequest)
@@ -106,7 +98,7 @@ extension CoinManager {
                     self.delegate?.didUpdatePrice(price: priceString, currency: currencyResult)
                 }
             }
-
+            
         } catch {
             print(error.localizedDescription)
         }
