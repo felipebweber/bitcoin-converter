@@ -35,6 +35,7 @@ class CoinManager {
         coinApiTeste.fetchCoinRequest { (dictionay) in
             DispatchQueue.main.async {
                 self.parseJSON(dictionay)
+                self.retreiveData(currency: "USD")
             }
         }
         
