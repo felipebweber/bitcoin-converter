@@ -24,8 +24,7 @@ class CoinManager {
     
     //Acesso ao contexto
     var context: NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
+        return DatabaseManager.shared.persistentContainer.viewContext
     }
     
     let currentArray = ["USD", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "DKK", "EUR", "GBP", "HKD", "INR", "ISK", "JPY", "KRW", "NZD", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD"]
@@ -35,7 +34,7 @@ class CoinManager {
         coinApiTeste.fetchCoinRequest { (dictionay) in
             DispatchQueue.main.async {
                 self.parseJSON(dictionay)
-                self.retreiveData(currency: "USD")
+                self.retrieveData(currency: "USD")
             }
         }
         
@@ -80,30 +79,16 @@ extension CoinManager {
         }
     }
     
-    func retreiveData(currency: String) {
+    func retrieveData(currency: String) {
         
-        let fetchRequest: NSFetchRequest<CoinEntity> = CoinEntity.fetchRequest()
-        let sortCurrency = NSSortDescriptor(key: "currency", ascending: true)
-        fetchRequest.sortDescriptors = [sortCurrency]
-        
-        manageResult = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        do {
-            let results = try context.fetch(fetchRequest)
-            print("Tamanho: \(results.count)")
-            for result in results {
-                guard let currencyResult = result.currency else { return }
-                
-                if currencyResult == currency {
-                    let priceString = toCurrencyFormat(price: result.price)
-                    self.delegate?.didUpdatePrice(price: priceString, currency: currencyResult)
-                }
-            }
+        for result in retrieve() {
+            guard let currencyResult = result.currency else { return }
             
-        } catch {
-            print(error.localizedDescription)
+            if currencyResult == currency {
+                let priceString = toCurrencyFormat(price: result.price)
+                self.delegate?.didUpdatePrice(price: priceString, currency: currencyResult)
+            }
         }
-        
     }
     
     func retrieve() -> [CoinEntity] {
