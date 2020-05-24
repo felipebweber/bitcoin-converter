@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -35,7 +35,7 @@
                                         <rect key="frame" x="0.0" y="73" width="343" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Njo-cc-fBq">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                                <rect key="frame" x="10" y="0.0" width="323" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="V28-cK-UeO">
                                                         <rect key="frame" x="0.0" y="0.5" width="50" height="49"/>
@@ -46,13 +46,13 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E22-Oj-4oI">
-                                                        <rect key="frame" x="70" y="0.0" width="199.5" height="50"/>
+                                                        <rect key="frame" x="70" y="0.0" width="179.5" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ -----" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39f-t1-scq">
-                                                        <rect key="frame" x="289.5" y="0.0" width="53.5" height="50"/>
+                                                        <rect key="frame" x="269.5" y="0.0" width="53.5" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -64,8 +64,8 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Njo-cc-fBq" secondAttribute="bottom" id="3zQ-JQ-Jgu"/>
                                             <constraint firstItem="Njo-cc-fBq" firstAttribute="top" secondItem="uQR-oO-YKo" secondAttribute="top" id="9Ml-Ik-iOS"/>
-                                            <constraint firstItem="Njo-cc-fBq" firstAttribute="leading" secondItem="uQR-oO-YKo" secondAttribute="leading" id="BxR-rc-kKT"/>
-                                            <constraint firstAttribute="trailing" secondItem="Njo-cc-fBq" secondAttribute="trailing" id="pQY-tp-Ljl"/>
+                                            <constraint firstItem="Njo-cc-fBq" firstAttribute="leading" secondItem="uQR-oO-YKo" secondAttribute="leading" constant="10" id="MPO-HL-IBs"/>
+                                            <constraint firstAttribute="trailing" secondItem="Njo-cc-fBq" secondAttribute="trailing" constant="10" id="qSD-b0-jsA"/>
                                             <constraint firstAttribute="height" constant="50" id="zQK-bb-eNZ"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
