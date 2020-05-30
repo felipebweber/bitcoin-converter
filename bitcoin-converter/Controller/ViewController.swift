@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var labelCurency: UILabel!
     @IBOutlet weak var currentPicker: UIPickerView!
+    @IBOutlet weak var updateDate: UILabel!
     
     var coinManager = CoinManager()
     
@@ -26,6 +27,15 @@ class ViewController: UIViewController {
         currentPicker.dataSource = self
         
         coinManager.fetchCoinPrice()
+        updateDate.text = "Atualizado as: \(getHour(Date()))"
+    }
+    
+    func getHour(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .long
+        dateFormatter.locale = Locale.current
+        return dateFormatter.string(from: date)
     }
     
 }

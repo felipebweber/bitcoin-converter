@@ -62,5 +62,7 @@
 	</array>
 	<key>UrlStandard</key>
 	<string>https://blockchain.info/ticker</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

@@ -16,6 +16,7 @@
 		5565D1E5246F5FD8009EABD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5565D1E4246F5FD8009EABD7 /* Assets.xcassets */; };
 		5565D1E8246F5FD8009EABD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5565D1E6246F5FD8009EABD7 /* LaunchScreen.storyboard */; };
 		5565D201246F6C8B009EABD7 /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565D200246F6C8B009EABD7 /* CoinManager.swift */; };
+		55AE83D42481F2F100D97525 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE83D32481F2F100D97525 /* CurrencyViewController.swift */; };
 		55D13A6724773B3C00A56E79 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D13A6624773B3C00A56E79 /* GeneratedMocks.swift */; };
 		55D13A6924773BAF00A56E79 /* CoinManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D13A6824773BAF00A56E79 /* CoinManagerTests.swift */; };
 		55E5E9C2247896BD009B8EBD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5E9C1247896BD009B8EBD /* Config.swift */; };
@@ -48,6 +49,7 @@
 		5565D1E7246F5FD8009EABD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5565D1E9246F5FD8009EABD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5565D200246F6C8B009EABD7 /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		55AE83D32481F2F100D97525 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		55D13A58247730E200A56E79 /* bitcoin-converterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bitcoin-converterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D13A5C247730E200A56E79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55D13A6624773B3C00A56E79 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				5565D1DF246F5FD6009EABD7 /* ViewController.swift */,
+				55AE83D32481F2F100D97525 /* CurrencyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				5565D1DC246F5FD6009EABD7 /* AppDelegate.swift in Sources */,
 				5565D1DE246F5FD6009EABD7 /* SceneDelegate.swift in Sources */,
 				55E5E9C424789BEE009B8EBD /* CoinAPI.swift in Sources */,
+				55AE83D42481F2F100D97525 /* CurrencyViewController.swift in Sources */,
 				55E5E9C2247896BD009B8EBD /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
