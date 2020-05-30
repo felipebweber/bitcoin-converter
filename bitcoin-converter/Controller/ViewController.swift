@@ -20,15 +20,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         coinManager.delegate = self
         currentPicker.delegate = self
         currentPicker.dataSource = self
         
         coinManager.fetchCoinPrice()
-        coinManager.retreiveData(currency: "USD")
     }
-
+    
 }
 
 extension ViewController: UIPickerViewDataSource {
@@ -46,7 +45,7 @@ extension ViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let select = coinManager.currentArray[row]
         print("Select: \(select)")
-        coinManager.retreiveData(currency: select)
+        coinManager.retrieveData(currency: select)
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

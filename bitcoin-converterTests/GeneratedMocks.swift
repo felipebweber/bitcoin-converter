@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-05-22 00:09:31 +0000
+// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-05-23 02:14:54 +0000
 
 //
 //  CoinManager.swift
@@ -152,6 +152,30 @@ import UIKit
     
     
     
+     override var coinApiTeste: CoinAPI {
+        get {
+            return cuckoo_manager.getter("coinApiTeste",
+                superclassCall:
+                    
+                    super.coinApiTeste
+                    ,
+                defaultCall: __defaultImplStub!.coinApiTeste)
+        }
+        
+        set {
+            cuckoo_manager.setter("coinApiTeste",
+                value: newValue,
+                superclassCall:
+                    
+                    super.coinApiTeste = newValue
+                    ,
+                defaultCall: __defaultImplStub!.coinApiTeste = newValue)
+        }
+        
+    }
+    
+    
+    
      override var manageResult: NSFetchedResultsController<CoinEntity>? {
         get {
             return cuckoo_manager.getter("manageResult",
@@ -209,16 +233,16 @@ import UIKit
     
     
     
-     override func parseJSON(_ data: Data)  {
+     override func parseJSON(_ dictionary: Dictionary<String, Any>)  {
         
-    return cuckoo_manager.call("parseJSON(_: Data)",
-            parameters: (data),
-            escapingParameters: (data),
+    return cuckoo_manager.call("parseJSON(_: Dictionary<String, Any>)",
+            parameters: (dictionary),
+            escapingParameters: (dictionary),
             superclassCall:
                 
-                super.parseJSON(data)
+                super.parseJSON(dictionary)
                 ,
-            defaultCall: __defaultImplStub!.parseJSON(data))
+            defaultCall: __defaultImplStub!.parseJSON(dictionary))
         
     }
     
@@ -233,6 +257,11 @@ import UIKit
 	    
 	    var delegate: Cuckoo.ClassToBeStubbedOptionalProperty<MockCoinManager, CoinManagerDelegate> {
 	        return .init(manager: cuckoo_manager, name: "delegate")
+	    }
+	    
+	    
+	    var coinApiTeste: Cuckoo.ClassToBeStubbedProperty<MockCoinManager, CoinAPI> {
+	        return .init(manager: cuckoo_manager, name: "coinApiTeste")
 	    }
 	    
 	    
@@ -251,9 +280,9 @@ import UIKit
 	        return .init(stub: cuckoo_manager.createStub(for: MockCoinManager.self, method: "fetchCoinPrice()", parameterMatchers: matchers))
 	    }
 	    
-	    func parseJSON<M1: Cuckoo.Matchable>(_ data: M1) -> Cuckoo.ClassStubNoReturnFunction<(Data)> where M1.MatchedType == Data {
-	        let matchers: [Cuckoo.ParameterMatcher<(Data)>] = [wrap(matchable: data) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockCoinManager.self, method: "parseJSON(_: Data)", parameterMatchers: matchers))
+	    func parseJSON<M1: Cuckoo.Matchable>(_ dictionary: M1) -> Cuckoo.ClassStubNoReturnFunction<(Dictionary<String, Any>)> where M1.MatchedType == Dictionary<String, Any> {
+	        let matchers: [Cuckoo.ParameterMatcher<(Dictionary<String, Any>)>] = [wrap(matchable: dictionary) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCoinManager.self, method: "parseJSON(_: Dictionary<String, Any>)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -276,6 +305,11 @@ import UIKit
 	    }
 	    
 	    
+	    var coinApiTeste: Cuckoo.VerifyProperty<CoinAPI> {
+	        return .init(manager: cuckoo_manager, name: "coinApiTeste", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
+	    
 	    var manageResult: Cuckoo.VerifyOptionalProperty<NSFetchedResultsController<CoinEntity>> {
 	        return .init(manager: cuckoo_manager, name: "manageResult", callMatcher: callMatcher, sourceLocation: sourceLocation)
 	    }
@@ -294,9 +328,9 @@ import UIKit
 	    }
 	    
 	    @discardableResult
-	    func parseJSON<M1: Cuckoo.Matchable>(_ data: M1) -> Cuckoo.__DoNotUse<(Data), Void> where M1.MatchedType == Data {
-	        let matchers: [Cuckoo.ParameterMatcher<(Data)>] = [wrap(matchable: data) { $0 }]
-	        return cuckoo_manager.verify("parseJSON(_: Data)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func parseJSON<M1: Cuckoo.Matchable>(_ dictionary: M1) -> Cuckoo.__DoNotUse<(Dictionary<String, Any>), Void> where M1.MatchedType == Dictionary<String, Any> {
+	        let matchers: [Cuckoo.ParameterMatcher<(Dictionary<String, Any>)>] = [wrap(matchable: dictionary) { $0 }]
+	        return cuckoo_manager.verify("parseJSON(_: Dictionary<String, Any>)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -308,6 +342,16 @@ import UIKit
      override var delegate: CoinManagerDelegate? {
         get {
             return DefaultValueRegistry.defaultValue(for: (CoinManagerDelegate?).self)
+        }
+        
+        set { }
+        
+    }
+    
+    
+     override var coinApiTeste: CoinAPI {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (CoinAPI).self)
         }
         
         set { }
@@ -340,7 +384,7 @@ import UIKit
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
-     override func parseJSON(_ data: Data)   {
+     override func parseJSON(_ dictionary: Dictionary<String, Any>)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
