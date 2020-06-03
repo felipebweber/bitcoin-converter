@@ -17,18 +17,25 @@ class SelectorViewController: UIViewController {
     @IBOutlet weak var updateDate: UILabel!
     
     var coinManager = CoinManager()
+    var selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
+    var arraySelectCurrency = [String]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         coinManager.delegate = self
-//        currentPicker.delegate = self
-//        currentPicker.dataSource = self
+        currencySelectorTableView.delegate = self
         currencySelectorTableView.dataSource = self
         
         coinManager.fetchCoinPrice()
         updateDate.text = "Atualizado as: \(getHour(Date()))"
+        
+        arraySelectCurrency = selectedCurrencyUserDefaults.retrive()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        selectedCurrencyUserDefaults.save(arraySelectCurrency)
     }
     
     func getHour(_ date: Date) -> String {
@@ -41,16 +48,40 @@ class SelectorViewController: UIViewController {
     
 }
 
-
 extension SelectorViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return coinManager.currentArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cellIdentifier")
-        cell.textLabel?.text = "Que delicinha"
+        let item = coinManager.currentArray[indexPath.row]
+        if arraySelectCurrency.contains(item) {
+            cell.accessoryType = .checkmark
+        }
+        cell.textLabel?.text = coinManager.currentArray[indexPath.row]
         return cell
+    }
+}
+
+extension SelectorViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        if cell.accessoryType == .none {
+            cell.accessoryType = .checkmark
+            let lineOfTable = coinManager.currentArray[indexPath.row]
+            arraySelectCurrency.append(lineOfTable)
+        } else {
+            cell.accessoryType = .none
+            let item = coinManager.currentArray[indexPath.row]
+            let filter = arraySelectCurrency.filter { (currency) -> Bool in
+                if item != currency {
+                    return true
+                }
+                return false
+            }
+            arraySelectCurrency = filter
+        }
     }
 }
 

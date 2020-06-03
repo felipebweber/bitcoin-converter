@@ -73,7 +73,6 @@ extension CoinManager {
         
         do {
             try context.save()
-            print("Dados salvos ")
         } catch {
             print("Erro ao salvar")
         }

@@ -14,11 +14,18 @@ class CurrencyViewController: UITableViewController {
     
     
     let coinManager = CoinManager()
+    let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
+    var arrayCurrency:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tableView.delegate = self
 //        tableView.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        arrayCurrency = selectedCurrencyUserDefaults.retrive()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -30,14 +37,13 @@ class CurrencyViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return coinManager.currentArray.count
+        return arrayCurrency.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        cell.textLabel?.text = "\(coinManager.currentArray[indexPath.row])"
-
+        cell.textLabel?.text = arrayCurrency[indexPath.row]
         return cell
     }
     
