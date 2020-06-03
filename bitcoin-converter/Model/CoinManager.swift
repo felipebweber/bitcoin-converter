@@ -34,7 +34,7 @@ class CoinManager {
         coinApiTeste.fetchCoinRequest { (dictionay) in
             DispatchQueue.main.async {
                 self.parseJSON(dictionay)
-                self.retrieveData(currency: "USD")
+//                self.retrieveData(currency: "USD")
             }
         }
         
@@ -78,16 +78,18 @@ extension CoinManager {
         }
     }
     
-    func retrieveData(currency: String) {
+    func retrieveData(currency: String) -> String {
         
         for result in retrieve() {
-            guard let currencyResult = result.currency else { return }
+            guard let currencyResult = result.currency else { return ""}
             
             if currencyResult == currency {
                 let priceString = toCurrencyFormat(price: result.price)
-                self.delegate?.didUpdatePrice(price: priceString, currency: currencyResult)
+                return priceString
+//                self.delegate?.didUpdatePrice(price: priceString, currency: currencyResult)
             }
         }
+        return ""
     }
     
     func retrieve() -> [CoinEntity] {

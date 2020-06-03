@@ -9,9 +9,6 @@
 import UIKit
 
 class CurrencyViewController: UITableViewController {
-
-    @IBOutlet weak var currencyTableViewCell: UITableViewCell!
-    
     
     let coinManager = CoinManager()
     let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
@@ -25,6 +22,7 @@ class CurrencyViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         arrayCurrency = selectedCurrencyUserDefaults.retrive()
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.reloadData()
     }
 
@@ -42,8 +40,10 @@ class CurrencyViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        cell.textLabel?.text = arrayCurrency[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
+        let currency = arrayCurrency[indexPath.row]
+        cell.priceLabel.text = coinManager.retrieveData(currency: currency)
+        cell.currencyLabel.text = currency
         return cell
     }
     

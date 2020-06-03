@@ -24,12 +24,10 @@ class SelectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        coinManager.delegate = self
         currencySelectorTableView.delegate = self
         currencySelectorTableView.dataSource = self
         
         coinManager.fetchCoinPrice()
-        updateDate.text = "Atualizado as: \(getHour(Date()))"
         
         arraySelectCurrency = selectedCurrencyUserDefaults.retrive()
     }
@@ -85,11 +83,11 @@ extension SelectorViewController: UITableViewDelegate {
     }
 }
 
-extension SelectorViewController: CoinManagerDelegate {
-    func didUpdatePrice(price: String, currency: String) {
-        DispatchQueue.main.async {
-            self.labelPrice.text = price
-            self.labelCurency.text = currency
-        }
-    }
-}
+//extension SelectorViewController: CoinManagerDelegate {
+//    func didUpdatePrice(price: String, currency: String) {
+//        DispatchQueue.main.async {
+//            self.labelPrice.text = price
+//            self.labelCurency.text = currency
+//        }
+//    }
+//}
