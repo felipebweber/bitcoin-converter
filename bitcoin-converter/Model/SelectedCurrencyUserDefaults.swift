@@ -18,9 +18,4 @@ class SelectedCurrencyUserDefaults {
         guard let data = UserDefaults.standard.object(forKey: "currencySelected") as? [String] else { return [] }
         return data
     }
-    
-//    func retrive() -> [String] {
-//        guard let data = UserDefaults.standard.object(forKey: "currencySelected") as? [String] else { return [] }
-//        return data
-//    }
 }
