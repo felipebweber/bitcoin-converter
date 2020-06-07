@@ -10,13 +10,13 @@
         <!--Currency View Controller-->
         <scene sceneID="dth-Vd-uBi">
             <objects>
-                <tableViewController id="kBY-gb-eux" customClass="CurrencyViewController" customModule="bitcoin_converter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="kBY-gb-eux" customClass="CurrencyViewController" customModule="Bitcoin_Check" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hh2-N6-pms">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Laz-Qi-KBi" customClass="CurrencyTableViewCell" customModule="bitcoin_converter" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Laz-Qi-KBi" customClass="CurrencyTableViewCell" customModule="Bitcoin_Check" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Laz-Qi-KBi" id="qpU-yM-dIe">
@@ -51,6 +51,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="rYf-9d-JPk">
+                        <barButtonItem key="leftBarButtonItem" image="gift" catalog="system" style="plain" id="VDT-88-QwM">
+                            <connections>
+                                <action selector="buy:" destination="kBY-gb-eux" id="dSD-3i-QF9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="4bf-Yl-BE1">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="PSG-Dx-8S5"/>
@@ -65,7 +70,7 @@
         <!--Selector View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SelectorViewController" customModule="bitcoin_converter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SelectorViewController" customModule="Bitcoin_Check" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,4 +117,7 @@
             <point key="canvasLocation" x="-500" y="55"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gift" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

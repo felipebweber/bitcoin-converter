@@ -60,9 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UrlStandard</key>
-	<string>https://blockchain.info/ticker</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>UrlStandard</key>
+	<string>https://blockchain.info/ticker</string>
 </dict>
 </plist>

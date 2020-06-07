@@ -7,17 +7,30 @@
 //
 
 import UIKit
+import StoreKit
 
 class CurrencyViewController: UITableViewController {
     
     let coinManager = CoinManager()
     let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
     var arrayCurrency:[String] = []
+    
+    var products = [SKProduct]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        
+        let update = getHour(Date())
+        
+        self.navigationItem.titleView = setTitle(title: "Bitcoin check", subtitle: "Update \(update)")
+        
+        IAProducts.store.requestProducts { (status, products) in
+            if status {
+                guard let products = products else { return }
+                print("Name: \(products)")
+                self.products = products
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,6 +38,49 @@ class CurrencyViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.reloadData()
     }
+    
+    func getHour(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        dateFormatter.locale = Locale.current
+        return dateFormatter.string(from: date)
+    }
+    
+    func setTitle(title:String, subtitle:String) -> UIView {
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: -5, width: 0, height: 0))
+
+        titleLabel.backgroundColor = UIColor.clear
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel.text = title
+        titleLabel.sizeToFit()
+
+        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: 0, height: 0))
+        subtitleLabel.backgroundColor = UIColor.clear
+        subtitleLabel.textColor = UIColor.gray
+        subtitleLabel.font = UIFont.systemFont(ofSize: 10)
+        subtitleLabel.text = subtitle
+        subtitleLabel.sizeToFit()
+
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height: 30))
+        titleView.addSubview(titleLabel)
+        titleView.addSubview(subtitleLabel)
+
+        let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
+
+        if widthDiff < 0 {
+            let newX = widthDiff / 2
+            subtitleLabel.frame.origin.x = abs(newX)
+        } else {
+            let newX = widthDiff / 2
+            titleLabel.frame.origin.x = newX
+        }
+
+        return titleView
+    }
+    
+    
 
     // MARK: - Table view data source
 
@@ -38,6 +94,16 @@ class CurrencyViewController: UITableViewController {
         return arrayCurrency.count
     }
 
+    @IBAction func buy(_ sender: Any) {
+        let menu = UIAlertController(title: "Compra", message: "Esta compra remove o banner", preferredStyle: .alert)
+        
+        let buy = UIAlertAction(title: "Buy", style: .default, handler: nil)
+        menu.addAction(buy)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        menu.addAction(cancel)
+
+        self.present(menu, animated: true, completion: nil)
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell

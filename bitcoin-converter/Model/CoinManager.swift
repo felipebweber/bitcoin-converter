@@ -29,6 +29,7 @@ class CoinManager {
     
     let currentArray = ["USD", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "DKK", "EUR", "GBP", "HKD", "INR", "ISK", "JPY", "KRW", "NZD", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD"]
     
+    
     func fetchCoinPrice() {
         
         coinApiTeste.fetchCoinRequest { (dictionay) in
