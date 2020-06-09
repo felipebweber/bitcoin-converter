@@ -27,21 +27,11 @@ class SelectorViewController: UIViewController {
         currencySelectorTableView.delegate = self
         currencySelectorTableView.dataSource = self
         
-        coinManager.fetchCoinPrice()
-        
         arraySelectCurrency = selectedCurrencyUserDefaults.retrive()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         selectedCurrencyUserDefaults.save(arraySelectCurrency)
-    }
-    
-    func getHour(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .long
-        dateFormatter.locale = Locale.current
-        return dateFormatter.string(from: date)
     }
     
 }
@@ -82,12 +72,3 @@ extension SelectorViewController: UITableViewDelegate {
         }
     }
 }
-
-//extension SelectorViewController: CoinManagerDelegate {
-//    func didUpdatePrice(price: String, currency: String) {
-//        DispatchQueue.main.async {
-//            self.labelPrice.text = price
-//            self.labelCurency.text = currency
-//        }
-//    }
-//}

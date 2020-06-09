@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-06-07 22:04:49 +0000
+// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-06-09 19:52:39 +0000
 
 //
 //  CoinManager.swift
@@ -41,16 +41,16 @@ import UIKit
     
     
     
-     func didUpdatePrice(price: String, currency: String)  {
+     func didUpdateFail()  {
         
-    return cuckoo_manager.call("didUpdatePrice(price: String, currency: String)",
-            parameters: (price, currency),
-            escapingParameters: (price, currency),
+    return cuckoo_manager.call("didUpdateFail()",
+            parameters: (),
+            escapingParameters: (),
             superclassCall:
                 
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
-            defaultCall: __defaultImplStub!.didUpdatePrice(price: price, currency: currency))
+            defaultCall: __defaultImplStub!.didUpdateFail())
         
     }
     
@@ -63,9 +63,9 @@ import UIKit
 	    }
 	    
 	    
-	    func didUpdatePrice<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(price: M1, currency: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(String, String)> where M1.MatchedType == String, M2.MatchedType == String {
-	        let matchers: [Cuckoo.ParameterMatcher<(String, String)>] = [wrap(matchable: price) { $0.0 }, wrap(matchable: currency) { $0.1 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockCoinManagerDelegate.self, method: "didUpdatePrice(price: String, currency: String)", parameterMatchers: matchers))
+	    func didUpdateFail() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockCoinManagerDelegate.self, method: "didUpdateFail()", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -85,9 +85,9 @@ import UIKit
 	
 	    
 	    @discardableResult
-	    func didUpdatePrice<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(price: M1, currency: M2) -> Cuckoo.__DoNotUse<(String, String), Void> where M1.MatchedType == String, M2.MatchedType == String {
-	        let matchers: [Cuckoo.ParameterMatcher<(String, String)>] = [wrap(matchable: price) { $0.0 }, wrap(matchable: currency) { $0.1 }]
-	        return cuckoo_manager.verify("didUpdatePrice(price: String, currency: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func didUpdateFail() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("didUpdateFail()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -99,7 +99,7 @@ import UIKit
     
 
     
-     func didUpdatePrice(price: String, currency: String)   {
+     func didUpdateFail()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -152,24 +152,24 @@ import UIKit
     
     
     
-     override var coinApiTeste: CoinAPI {
+     override var coinApi: CoinAPI {
         get {
-            return cuckoo_manager.getter("coinApiTeste",
+            return cuckoo_manager.getter("coinApi",
                 superclassCall:
                     
-                    super.coinApiTeste
+                    super.coinApi
                     ,
-                defaultCall: __defaultImplStub!.coinApiTeste)
+                defaultCall: __defaultImplStub!.coinApi)
         }
         
         set {
-            cuckoo_manager.setter("coinApiTeste",
+            cuckoo_manager.setter("coinApi",
                 value: newValue,
                 superclassCall:
                     
-                    super.coinApiTeste = newValue
+                    super.coinApi = newValue
                     ,
-                defaultCall: __defaultImplStub!.coinApiTeste = newValue)
+                defaultCall: __defaultImplStub!.coinApi = newValue)
         }
         
     }
@@ -246,6 +246,21 @@ import UIKit
         
     }
     
+    
+    
+     override func getHour(_ date: Date) -> String {
+        
+    return cuckoo_manager.call("getHour(_: Date) -> String",
+            parameters: (date),
+            escapingParameters: (date),
+            superclassCall:
+                
+                super.getHour(date)
+                ,
+            defaultCall: __defaultImplStub!.getHour(date))
+        
+    }
+    
 
 	 struct __StubbingProxy_CoinManager: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -260,8 +275,8 @@ import UIKit
 	    }
 	    
 	    
-	    var coinApiTeste: Cuckoo.ClassToBeStubbedProperty<MockCoinManager, CoinAPI> {
-	        return .init(manager: cuckoo_manager, name: "coinApiTeste")
+	    var coinApi: Cuckoo.ClassToBeStubbedProperty<MockCoinManager, CoinAPI> {
+	        return .init(manager: cuckoo_manager, name: "coinApi")
 	    }
 	    
 	    
@@ -285,6 +300,11 @@ import UIKit
 	        return .init(stub: cuckoo_manager.createStub(for: MockCoinManager.self, method: "parseJSON(_: Dictionary<String, Any>)", parameterMatchers: matchers))
 	    }
 	    
+	    func getHour<M1: Cuckoo.Matchable>(_ date: M1) -> Cuckoo.ClassStubFunction<(Date), String> where M1.MatchedType == Date {
+	        let matchers: [Cuckoo.ParameterMatcher<(Date)>] = [wrap(matchable: date) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCoinManager.self, method: "getHour(_: Date) -> String", parameterMatchers: matchers))
+	    }
+	    
 	}
 
 	 struct __VerificationProxy_CoinManager: Cuckoo.VerificationProxy {
@@ -305,8 +325,8 @@ import UIKit
 	    }
 	    
 	    
-	    var coinApiTeste: Cuckoo.VerifyProperty<CoinAPI> {
-	        return .init(manager: cuckoo_manager, name: "coinApiTeste", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    var coinApi: Cuckoo.VerifyProperty<CoinAPI> {
+	        return .init(manager: cuckoo_manager, name: "coinApi", callMatcher: callMatcher, sourceLocation: sourceLocation)
 	    }
 	    
 	    
@@ -333,6 +353,12 @@ import UIKit
 	        return cuckoo_manager.verify("parseJSON(_: Dictionary<String, Any>)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
+	    @discardableResult
+	    func getHour<M1: Cuckoo.Matchable>(_ date: M1) -> Cuckoo.__DoNotUse<(Date), String> where M1.MatchedType == Date {
+	        let matchers: [Cuckoo.ParameterMatcher<(Date)>] = [wrap(matchable: date) { $0 }]
+	        return cuckoo_manager.verify("getHour(_: Date) -> String", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
 	}
 }
 
@@ -349,7 +375,7 @@ import UIKit
     }
     
     
-     override var coinApiTeste: CoinAPI {
+     override var coinApi: CoinAPI {
         get {
             return DefaultValueRegistry.defaultValue(for: (CoinAPI).self)
         }
@@ -386,6 +412,10 @@ import UIKit
     
      override func parseJSON(_ dictionary: Dictionary<String, Any>)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func getHour(_ date: Date) -> String  {
+        return DefaultValueRegistry.defaultValue(for: (String).self)
     }
     
 }

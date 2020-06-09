@@ -14,7 +14,7 @@
 * HKD -> Dólar de Hong Kong
 * INR -> Rupia Indiana
 * ISK -> Coroa Islandesa
-* JPY -> Iene Janopnês
+* JPY -> Iene Japonês
 * KRW -> Won Sul-Coreano
 * NZD -> Dólar Neozelandês
 * PLN -> Zloti Polaco

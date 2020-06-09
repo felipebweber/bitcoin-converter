@@ -1,0 +1,31 @@
+
+/* Class = "UILabel"; text = "$ -----"; ObjectID = "GOx-Lr-U6D"; */
+"GOx-Lr-U6D.text" = "$ -----";
+
+/* Class = "UILabel"; text = "---"; ObjectID = "zs3-sh-ikY"; */
+"zs3-sh-ikY.text" = "---";
+
+/* Currency e descriptions */
+"usd" = "Dólar"
+"aud" = "Dólar Australiano"
+"brl" = "Real"
+"cad" = "Dólar Canadense"
+"chf" = "Fraco Suiço"
+"clp" = "Peso Chileno"
+"cny" = "Yuan Chinês"
+"dkk" = "Coroa Dinamarquesa"
+"eur" = "Euro"
+"gpb" = "Libra Esterlina Britânica"
+"hkd" = "Dólar de Hong Kong"
+"inr" = "Rupia Indiana"
+"isk" = "Coroa Islandesa"
+"jpy" = "Iene Japonês"
+"krw" = "Won Sul-Coreano"
+"nzd" = "Dólar Neozelandês"
+"pln" = "Zloti Polaco"
+"rub" = "Rublo Russo"
+"sek" = "Coroa Sueca"
+"sgd" = "Dólar Singapuriano"
+"thb" = "Bath Tailandês"
+"try" = "Lira Turca"
+"twd" = "Novo Dólar Taiwanês"

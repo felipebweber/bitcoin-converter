@@ -16,15 +16,16 @@ class CoinAPI: NSObject {
         return url
     }()
     
-    func fetchCoinRequest(completion: @escaping(Dictionary<String, Any>) -> Void) {
+    func fetchCoinRequest(completion: @escaping(Bool ,Dictionary<String, Any>) -> Void) {
         AF.request(url).responseJSON { (response) in
             switch response.result {
             case .success:
                 if let responseDictionary = response.value as? Dictionary<String, Any> {
-                    completion(responseDictionary)
+                    completion(true ,responseDictionary)
                 }
                 break
             case .failure:
+                completion(false, Dictionary<String, Any>())
                 break
             }
         }

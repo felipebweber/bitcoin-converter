@@ -11,16 +11,15 @@ import  UIKit
 import CoreData
 
 protocol CoinManagerDelegate: class {
-    func didUpdatePrice(price: String, currency: String)
+    func didUpdateFail()
 }
 
 class CoinManager {
     
     weak var delegate: CoinManagerDelegate?
-    
-    var coinApiTeste = CoinAPI()
-    
+    var coinApi = CoinAPI()
     var manageResult: NSFetchedResultsController<CoinEntity>?
+    private let  selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
     
     //Acesso ao contexto
     var context: NSManagedObjectContext {
@@ -32,11 +31,19 @@ class CoinManager {
     
     func fetchCoinPrice() {
         
-        coinApiTeste.fetchCoinRequest { (dictionay) in
-            DispatchQueue.main.async {
-                self.parseJSON(dictionay)
-//                self.retrieveData(currency: "USD")
+        coinApi.fetchCoinRequest { (result ,dictionay) in
+            if result {
+                DispatchQueue.main.async {
+                    let date = self.getHour(Date())
+                    print("Date: \(date)")
+                    self.selectedCurrencyUserDefaults.setHourUpdate(date: date)
+                    self.parseJSON(dictionay)
+                }
+            } else {
+                print("Erro de conexão")
+                self.delegate?.didUpdateFail()
             }
+            
         }
         
     }
@@ -48,6 +55,14 @@ class CoinManager {
             guard let valueSafe = val["last"] as? Double else { return }
             save(currency: key, price: valueSafe)
         }
+    }
+    
+    func getHour(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        dateFormatter.locale = Locale.current
+        return dateFormatter.string(from: date)
     }
 }
 

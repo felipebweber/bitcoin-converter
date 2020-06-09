@@ -15,36 +15,34 @@ class CurrencyViewController: UITableViewController {
     let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
     var arrayCurrency:[String] = []
     
-    var products = [SKProduct]()
+    
+//    var products = [SKProduct]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let update = getHour(Date())
+        coinManager.fetchCoinPrice()
+        
+        let update = selectedCurrencyUserDefaults.retriveHourUpdate()
         
         self.navigationItem.titleView = setTitle(title: "Bitcoin check", subtitle: "Update \(update)")
+        coinManager.delegate = self
         
-        IAProducts.store.requestProducts { (status, products) in
-            if status {
-                guard let products = products else { return }
-                print("Name: \(products)")
-                self.products = products
-            }
-        }
+//        IAProducts.store.requestProducts { (status, products) in
+//            if status {
+//                guard let products = products else { return }
+//                print("Name: \(products)")
+//                self.products = products
+//            }
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
+//        let update = selectedCurrencyUserDefaults.retriveHourUpdate()
+//        self.navigationItem.titleView = setTitle(title: "Bitcoin check", subtitle: "Update \(update)")
         arrayCurrency = selectedCurrencyUserDefaults.retrive()
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.reloadData()
-    }
-    
-    func getHour(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
-        dateFormatter.locale = Locale.current
-        return dateFormatter.string(from: date)
     }
     
     func setTitle(title:String, subtitle:String) -> UIView {
@@ -113,4 +111,13 @@ class CurrencyViewController: UITableViewController {
         return cell
     }
 
+}
+
+extension CurrencyViewController: CoinManagerDelegate {
+    func didUpdateFail() {
+        let alertController = UIAlertController(title: "Sem conexão", message: "Por favor verifique sua conexão com a internet", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
