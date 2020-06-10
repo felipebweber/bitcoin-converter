@@ -92,16 +92,16 @@ class CurrencyViewController: UITableViewController {
         return arrayCurrency.count
     }
 
-    @IBAction func buy(_ sender: Any) {
-        let menu = UIAlertController(title: "Compra", message: "Esta compra remove o banner", preferredStyle: .alert)
-        
-        let buy = UIAlertAction(title: "Buy", style: .default, handler: nil)
-        menu.addAction(buy)
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        menu.addAction(cancel)
-
-        self.present(menu, animated: true, completion: nil)
-    }
+//    @IBAction func buy(_ sender: Any) {
+//        let menu = UIAlertController(title: "Compra", message: "Esta compra remove o banner", preferredStyle: .alert)
+//        
+//        let buy = UIAlertAction(title: "Buy", style: .default, handler: nil)
+//        menu.addAction(buy)
+//        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//        menu.addAction(cancel)
+//
+//        self.present(menu, animated: true, completion: nil)
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell

@@ -21,7 +21,7 @@ class CoinAPI: NSObject {
             switch response.result {
             case .success:
                 if let responseDictionary = response.value as? Dictionary<String, Any> {
-                    completion(true ,responseDictionary)
+                    completion(true , responseDictionary)
                 }
                 break
             case .failure:

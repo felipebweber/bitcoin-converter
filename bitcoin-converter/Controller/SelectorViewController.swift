@@ -11,10 +11,7 @@ import CoreData
 
 class SelectorViewController: UIViewController {
     
-    @IBOutlet weak var labelPrice: UILabel!
-    @IBOutlet weak var labelCurency: UILabel!
     @IBOutlet weak var currencySelectorTableView: UITableView!
-    @IBOutlet weak var updateDate: UILabel!
     
     var coinManager = CoinManager()
     var selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
@@ -24,8 +21,8 @@ class SelectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currencySelectorTableView.delegate = self
-        currencySelectorTableView.dataSource = self
+//        currencySelectorTableView.delegate = self
+//        currencySelectorTableView.dataSource = self
         
         arraySelectCurrency = selectedCurrencyUserDefaults.retrive()
     }
@@ -42,12 +39,16 @@ extension SelectorViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cellIdentifier")
-        let item = coinManager.currentArray[indexPath.row]
-        if arraySelectCurrency.contains(item) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! SelectorTableViewCell
+        let currency = coinManager.currentArray[indexPath.row]
+        
+        if arraySelectCurrency.contains(currency) {
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
-        cell.textLabel?.text = coinManager.currentArray[indexPath.row]
+
+        cell.setLabel(currency, "Alguma")
         return cell
     }
 }
@@ -72,3 +73,5 @@ extension SelectorViewController: UITableViewDelegate {
         }
     }
 }
+
+

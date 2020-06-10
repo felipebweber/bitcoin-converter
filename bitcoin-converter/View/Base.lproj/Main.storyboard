@@ -51,11 +51,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="rYf-9d-JPk">
-                        <barButtonItem key="leftBarButtonItem" image="gift" catalog="system" style="plain" id="VDT-88-QwM">
-                            <connections>
-                                <action selector="buy:" destination="kBY-gb-eux" id="dSD-3i-QF9"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="4bf-Yl-BE1">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="PSG-Dx-8S5"/>
@@ -78,6 +73,47 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="koY-kl-RsP">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="XV5-Lz-wYf" customClass="SelectorTableViewCell" customModule="Bitcoin_Check" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="47.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XV5-Lz-wYf" id="uvP-Fy-s0z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMB-ax-e2m">
+                                                    <rect key="frame" x="10" y="10" width="355" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPU-h8-DFK">
+                                                    <rect key="frame" x="10" y="30" width="360" height="12.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MMB-ax-e2m" firstAttribute="top" secondItem="uvP-Fy-s0z" secondAttribute="top" constant="10" id="EVm-Lz-4Vc"/>
+                                                <constraint firstItem="MMB-ax-e2m" firstAttribute="leading" secondItem="uvP-Fy-s0z" secondAttribute="leading" constant="10" id="FAX-zo-zbL"/>
+                                                <constraint firstItem="LPU-h8-DFK" firstAttribute="trailing" secondItem="uvP-Fy-s0z" secondAttribute="trailingMargin" constant="10" id="IKW-E1-sAw"/>
+                                                <constraint firstAttribute="bottom" secondItem="LPU-h8-DFK" secondAttribute="bottom" constant="5" id="Q8y-KB-xXH"/>
+                                                <constraint firstItem="LPU-h8-DFK" firstAttribute="leading" secondItem="MMB-ax-e2m" secondAttribute="leading" id="fmb-LS-WZk"/>
+                                                <constraint firstItem="LPU-h8-DFK" firstAttribute="top" secondItem="MMB-ax-e2m" secondAttribute="top" constant="20" id="jmR-3K-Q7u"/>
+                                                <constraint firstAttribute="trailing" secondItem="MMB-ax-e2m" secondAttribute="trailing" constant="10" id="yBg-BW-SSP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="currencyLabel" destination="MMB-ax-e2m" id="bbi-fC-DHi"/>
+                                            <outlet property="descriptionLabel" destination="LPU-h8-DFK" id="B5Q-e3-WFW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="awE-Ky-WVy"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eAp-QU-r3H"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.68235294120000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,7 +127,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8Ap-Q3-Gob"/>
                     <connections>
-                        <outlet property="currencySelectorTableView" destination="koY-kl-RsP" id="lL0-Od-OkK"/>
+                        <outlet property="currencySelectorTableView" destination="koY-kl-RsP" id="Ubu-rd-fQr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -117,7 +153,4 @@
             <point key="canvasLocation" x="-500" y="55"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="gift" catalog="system" width="128" height="121"/>
-    </resources>
 </document>
