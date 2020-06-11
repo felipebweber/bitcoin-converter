@@ -8,9 +8,13 @@
 
 import UIKit
 
-class CurrencyTableViewCell: UITableViewCell {
+final class CurrencyTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var currencyLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet private weak var currencyLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
     
+    func setCurrencyLabel(_ currency: String,_ price: String) {
+        currencyLabel.text = currency
+        priceLabel.text = price
+    }
 }

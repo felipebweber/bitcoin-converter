@@ -14,21 +14,22 @@ protocol CoinManagerDelegate: class {
     func didUpdateFail()
 }
 
-class CoinManager {
+final class CoinManager {
     
     weak var delegate: CoinManagerDelegate?
-    var coinApi = CoinAPI()
-    var manageResult: NSFetchedResultsController<CoinEntity>?
+    private var coinApi = CoinAPI()
+    private var manageResult: NSFetchedResultsController<CoinEntity>?
     private let  selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
     
     //Acesso ao contexto
-    var context: NSManagedObjectContext {
+    private var context: NSManagedObjectContext {
         return DatabaseManager.shared.persistentContainer.viewContext
     }
     
     let currentArray = ["USD", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "DKK", "EUR", "GBP", "HKD", "INR", "ISK", "JPY", "KRW", "NZD", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD"]
-    
-    
+}
+
+extension CoinManager {
     func fetchCoinPrice() {
         
         coinApi.fetchCoinRequest { (result ,dictionay) in
@@ -48,7 +49,7 @@ class CoinManager {
         
     }
     
-    func parseJSON(_ dictionary: Dictionary<String, Any>) {
+    private func parseJSON(_ dictionary: Dictionary<String, Any>) {
         
         for (key, value) in dictionary {
             guard let val = value as? Dictionary<String, Any> else { return }
@@ -57,18 +58,15 @@ class CoinManager {
         }
     }
     
-    func getHour(_ date: Date) -> String {
+    private func getHour(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         dateFormatter.locale = Locale.current
         return dateFormatter.string(from: date)
     }
-}
-
-extension CoinManager {
     
-    func save(currency: String, price: Double) {
+    private func save(currency: String, price: Double) {
         
         var coinEntity: NSManagedObject?
         
@@ -102,13 +100,12 @@ extension CoinManager {
             if currencyResult == currency {
                 let priceString = toCurrencyFormat(price: result.price)
                 return priceString
-//                self.delegate?.didUpdatePrice(price: priceString, currency: currencyResult)
             }
         }
         return ""
     }
     
-    func retrieve() -> [CoinEntity] {
+    private func retrieve() -> [CoinEntity] {
         
         let fetchRequest: NSFetchRequest<CoinEntity> = CoinEntity.fetchRequest()
         let sortCurrency = NSSortDescriptor(key: "currency", ascending: true)
@@ -127,7 +124,7 @@ extension CoinManager {
         return result
     }
     
-    func toCurrencyFormat(price: Double) -> String {
+    private func toCurrencyFormat(price: Double) -> String {
         
         let currencyFormat = NumberFormatter()
         currencyFormat.usesGroupingSeparator = true

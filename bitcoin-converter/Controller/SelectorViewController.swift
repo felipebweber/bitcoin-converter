@@ -9,20 +9,17 @@
 import UIKit
 import CoreData
 
-class SelectorViewController: UIViewController {
+final class SelectorViewController: UIViewController {
     
     @IBOutlet weak var currencySelectorTableView: UITableView!
     
-    var coinManager = CoinManager()
-    var selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
-    var arraySelectCurrency = [String]()
+    private let coinManager = CoinManager()
+    private let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
+    private var arraySelectCurrency = [String]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        currencySelectorTableView.delegate = self
-//        currencySelectorTableView.dataSource = self
         
         arraySelectCurrency = selectedCurrencyUserDefaults.retrive()
     }
@@ -48,7 +45,7 @@ extension SelectorViewController: UITableViewDataSource {
             cell.accessoryType = .none
         }
 
-        cell.setLabel(currency, "Alguma")
+        cell.setSelectorLabel(currency, "Alguma")
         return cell
     }
 }

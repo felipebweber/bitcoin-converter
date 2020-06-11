@@ -6,7 +6,7 @@
 
 import UIKit
 
-class SelectedCurrencyUserDefaults {
+final class SelectedCurrencyUserDefaults {
     
     private let keySetHourUpdate = "setHourUpdate"
     

@@ -9,11 +9,11 @@
 import UIKit
 import StoreKit
 
-class CurrencyViewController: UITableViewController {
+final class CurrencyViewController: UITableViewController {
     
-    let coinManager = CoinManager()
-    let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
-    var arrayCurrency:[String] = []
+    private let coinManager = CoinManager()
+    private let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
+    private var arrayCurrency:[String] = []
     
     
 //    var products = [SKProduct]()
@@ -44,8 +44,50 @@ class CurrencyViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.reloadData()
     }
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayCurrency.count
+    }
+
+//    @IBAction func buy(_ sender: Any) {
+//        let menu = UIAlertController(title: "Compra", message: "Esta compra remove o banner", preferredStyle: .alert)
+//        
+//        let buy = UIAlertAction(title: "Buy", style: .default, handler: nil)
+//        menu.addAction(buy)
+//        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//        menu.addAction(cancel)
+//
+//        self.present(menu, animated: true, completion: nil)
+//    }
     
-    func setTitle(title:String, subtitle:String) -> UIView {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
+        let currency = arrayCurrency[indexPath.row]
+        let price = coinManager.retrieveData(currency: currency)
+        cell.setCurrencyLabel(currency, price)
+        return cell
+    }
+
+}
+
+extension CurrencyViewController: CoinManagerDelegate {
+    func didUpdateFail() {
+        let alertController = UIAlertController(title: "Sem conexão", message: "Por favor verifique sua conexão com a internet", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension CurrencyViewController {
+    private func setTitle(title:String, subtitle:String) -> UIView {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -5, width: 0, height: 0))
 
         titleLabel.backgroundColor = UIColor.clear
@@ -76,48 +118,5 @@ class CurrencyViewController: UITableViewController {
         }
 
         return titleView
-    }
-    
-    
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return arrayCurrency.count
-    }
-
-//    @IBAction func buy(_ sender: Any) {
-//        let menu = UIAlertController(title: "Compra", message: "Esta compra remove o banner", preferredStyle: .alert)
-//        
-//        let buy = UIAlertAction(title: "Buy", style: .default, handler: nil)
-//        menu.addAction(buy)
-//        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//        menu.addAction(cancel)
-//
-//        self.present(menu, animated: true, completion: nil)
-//    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
-        let currency = arrayCurrency[indexPath.row]
-        cell.priceLabel.text = coinManager.retrieveData(currency: currency)
-        cell.currencyLabel.text = currency
-        return cell
-    }
-
-}
-
-extension CurrencyViewController: CoinManagerDelegate {
-    func didUpdateFail() {
-        let alertController = UIAlertController(title: "Sem conexão", message: "Por favor verifique sua conexão com a internet", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
-        alertController.addAction(cancel)
-        self.present(alertController, animated: true, completion: nil)
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class CoinAPI: NSObject {
+final class CoinAPI: NSObject {
     
     lazy var url: String = {
         guard let url = Config().getUrlStandard() else { return "" }
