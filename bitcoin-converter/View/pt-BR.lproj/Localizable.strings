@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  bitcoin-converter
+
+  Created by Felipe Weber on 11/06/20.
+  Copyright © 2020 Felipe Weber. All rights reserved.
+*/
+
+/* Currency e descriptions */
+"usd" = "Dólar BRL";
+"aud" = "Dólar Australiano";
+"brl" = "Real";
+"cad" = "Dólar Canadense";
+"chf" = "Fraco Suiço";
+"clp" = "Peso Chileno";
+"cny" = "Yuan Chinês";
+"dkk" = "Coroa Dinamarquesa";
+"eur" = "Euro";
+"gbp" = "Libra Esterlina Britânica";
+"hkd" = "Dólar de Hong Kong";
+"inr" = "Rupia Indiana";
+"isk" = "Coroa Islandesa";
+"jpy" = "Iene Japonês";
+"krw" = "Won Sul-Coreano";
+"nzd" = "Dólar Neozelandês";
+"pln" = "Zloti Polaco";
+"rub" = "Rublo Russo";
+"sek" = "Coroa Sueca";
+"sgd" = "Dólar Singapuriano";
+"thb" = "Bath Tailandês";
+"try" = "Lira Turca";
+"twd" = "Novo Dólar Taiwanês";

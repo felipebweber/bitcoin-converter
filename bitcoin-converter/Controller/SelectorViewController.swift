@@ -44,8 +44,10 @@ extension SelectorViewController: UITableViewDataSource {
         } else {
             cell.accessoryType = .none
         }
+        
+        let description = NSLocalizedString(currency.lowercased(), comment: "")
 
-        cell.setSelectorLabel(currency, "Alguma")
+        cell.setSelectorLabel(currency, description)
         return cell
     }
 }

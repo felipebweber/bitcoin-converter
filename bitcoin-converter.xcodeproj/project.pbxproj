@@ -21,6 +21,7 @@
 		55758D4E248B115700B4FE9D /* IAProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55758D4D248B115700B4FE9D /* IAProducts.swift */; };
 		55758D50248B169400B4FE9D /* IAHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55758D4F248B169400B4FE9D /* IAHelper.swift */; };
 		55758D52248B2E4000B4FE9D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55758D51248B2E4000B4FE9D /* StoreKit.framework */; };
+		55ACFF0B2492FEEF0076443A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55ACFF0D2492FEEF0076443A /* Localizable.strings */; };
 		55AE83D42481F2F100D97525 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE83D32481F2F100D97525 /* CurrencyViewController.swift */; };
 		55D13A6724773B3C00A56E79 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D13A6624773B3C00A56E79 /* GeneratedMocks.swift */; };
 		55D13A6924773BAF00A56E79 /* CoinManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D13A6824773BAF00A56E79 /* CoinManagerTests.swift */; };
@@ -61,6 +62,8 @@
 		55758D4F248B169400B4FE9D /* IAHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAHelper.swift; sourceTree = "<group>"; };
 		55758D51248B2E4000B4FE9D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		55758D53248B2F3700B4FE9D /* Bitcoin Check.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bitcoin Check.entitlements"; sourceTree = "<group>"; };
+		55ACFF0C2492FEEF0076443A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		55ACFF0E2492FEF20076443A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		55AE83D32481F2F100D97525 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		55D13A58247730E200A56E79 /* bitcoin-converterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bitcoin-converterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D13A5C247730E200A56E79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,9 +71,7 @@
 		55D13A6824773BAF00A56E79 /* CoinManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManagerTests.swift; sourceTree = "<group>"; };
 		55E5E9C1247896BD009B8EBD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		55E5E9C324789BEE009B8EBD /* CoinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPI.swift; sourceTree = "<group>"; };
-		55FB2C4524901AC8002A2CF3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		55FB2C4624901AC8002A2CF3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		55FB2C4824901C72002A2CF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		55FB2C4924905A53002A2CF3 /* SelectorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorTableViewCell.swift; sourceTree = "<group>"; };
 		A92273A42479F705008BB896 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		B325508BA74EE27812C2220B /* Pods-bitcoin-converterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitcoin-converterTests.debug.xcconfig"; path = "Target Support Files/Pods-bitcoin-converterTests/Pods-bitcoin-converterTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				5565D1E1246F5FD6009EABD7 /* Main.storyboard */,
+				55ACFF0D2492FEEF0076443A /* Localizable.strings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5565D1E8246F5FD8009EABD7 /* LaunchScreen.storyboard in Resources */,
+				55ACFF0B2492FEEF0076443A /* Localizable.strings in Resources */,
 				5565D1E5246F5FD8009EABD7 /* Assets.xcassets in Resources */,
 				5565D1E3246F5FD6009EABD7 /* Main.storyboard in Resources */,
 			);
@@ -471,8 +474,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				5565D1E2246F5FD6009EABD7 /* Base */,
-				55FB2C4524901AC8002A2CF3 /* pt-BR */,
-				55FB2C4824901C72002A2CF3 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -484,6 +485,15 @@
 				55FB2C4624901AC8002A2CF3 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		55ACFF0D2492FEEF0076443A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55ACFF0C2492FEEF0076443A /* en */,
+				55ACFF0E2492FEF20076443A /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
