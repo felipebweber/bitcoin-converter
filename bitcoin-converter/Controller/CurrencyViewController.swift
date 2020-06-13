@@ -47,14 +47,12 @@ final class CurrencyViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayCurrency.count
-    }
+    
 
 //    @IBAction func buy(_ sender: Any) {
 //        let menu = UIAlertController(title: "Compra", message: "Esta compra remove o banner", preferredStyle: .alert)
@@ -67,17 +65,27 @@ final class CurrencyViewController: UITableViewController {
 //        self.present(menu, animated: true, completion: nil)
 //    }
     
+    
+
+}
+
+extension CurrencyViewController {
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
         let currency = arrayCurrency[indexPath.row]
         let result = coinManager.retrieveData(currency: currency)
         guard let price = result?.price else { return cell }
         guard let symbol = result?.symbol else { return cell }
+        let priceFormat = price.toCurrencyFormat()
         cell.symbolImageView.image = UIImage(imageLiteralResourceName: currency.lowercased())
-        cell.setCurrencyLabel(currency, "\(symbol) \(price)")
+        cell.setCurrencyLabel(currency, "\(symbol) \(priceFormat)")
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayCurrency.count
+    }
 }
 
 extension CurrencyViewController: CoinManagerDelegate {
@@ -121,5 +129,16 @@ extension CurrencyViewController {
         }
 
         return titleView
+    }
+}
+
+extension Double {
+    func toCurrencyFormat() -> String {
+        let currencyFormat = NumberFormatter()
+        currencyFormat.usesGroupingSeparator = true
+        currencyFormat.numberStyle = NumberFormatter.Style.decimal
+        currencyFormat.locale = Locale.current
+        guard let priceString = currencyFormat.string(from: NSNumber(value: self)) else { return ""}
+        return priceString
     }
 }

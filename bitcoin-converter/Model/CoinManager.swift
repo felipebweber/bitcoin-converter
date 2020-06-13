@@ -35,7 +35,7 @@ extension CoinManager {
         coinApi.fetchCoinRequest { (result ,dictionay) in
             if result {
                 DispatchQueue.main.async {
-                    let date = self.getHour(Date())
+                    let date = Date().formattedHour()
                     print("Date: \(date)")
                     self.selectedCurrencyUserDefaults.setHourUpdate(date: date)
                     self.parseJSON(dictionay)
@@ -57,14 +57,6 @@ extension CoinManager {
             guard let symbol = val["symbol"] as? String else { return }
             save(currency: key, price: value, symbol: symbol)
         }
-    }
-    
-    private func getHour(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
-        dateFormatter.locale = Locale.current
-        return dateFormatter.string(from: date)
     }
     
     private func save(currency: String, price: Double, symbol: String) {
@@ -100,8 +92,6 @@ extension CoinManager {
             guard let currencyResult = result.currency else { return result }
             
             if currencyResult == currency {
-//                let priceString = toCurrencyFormat(price: result.price)
-//                let symbol = result.symbol
                 return result
             }
         }
@@ -126,14 +116,14 @@ extension CoinManager {
         guard let result = manageResult?.fetchedObjects else { return []}
         return result
     }
-    
-    private func toCurrencyFormat(price: Double) -> String {
-        
-        let currencyFormat = NumberFormatter()
-        currencyFormat.usesGroupingSeparator = true
-        currencyFormat.numberStyle = NumberFormatter.Style.decimal
-        currencyFormat.locale = Locale.current
-        guard let priceString = currencyFormat.string(from: NSNumber(value: price)) else { return ""}
-        return priceString
+}
+
+extension Date {
+    func formattedHour() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        dateFormatter.locale = Locale.current
+        return dateFormatter.string(from: self)
     }
 }
