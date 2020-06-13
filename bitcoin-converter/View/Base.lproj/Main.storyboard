@@ -14,7 +14,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hh2-N6-pms">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.13690979309861692" green="0.48617273618377749" blue="0.82574239659289339" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Laz-Qi-KBi" customClass="CurrencyTableViewCell" customModule="Bitcoin_Check" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43"/>
@@ -24,15 +25,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs3-sh-ikY">
-                                            <rect key="frame" x="52" y="11" width="43.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="52" y="11" width="32.5" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ ------------" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOx-Lr-U6D">
-                                            <rect key="frame" x="263.5" y="10" width="101.5" height="23"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="286" y="10" width="79" height="23"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="jeE-RS-tjg">
@@ -43,6 +44,7 @@
                                             </constraints>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.082352941176470587" green="0.34901960784313724" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="GOx-Lr-U6D" secondAttribute="trailing" constant="10" id="190-3y-omC"/>
                                         <constraint firstItem="jeE-RS-tjg" firstAttribute="leading" secondItem="qpU-yM-dIe" secondAttribute="leading" constant="10" id="1Ha-cx-UIo"/>
@@ -55,6 +57,7 @@
                                         <constraint firstItem="zs3-sh-ikY" firstAttribute="bottom" secondItem="qpU-yM-dIe" secondAttribute="bottomMargin" id="e41-LM-c2I"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.083987481889999993" green="0.35003501180000002" blue="0.65689063069999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="currencyLabel" destination="zs3-sh-ikY" id="9nf-nB-geU"/>
                                     <outlet property="priceLabel" destination="GOx-Lr-U6D" id="KNp-jx-SNQ"/>
@@ -69,6 +72,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="rYf-9d-JPk">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="4bf-Yl-BE1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="PSG-Dx-8S5"/>
                             </connections>
@@ -91,28 +95,30 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="XV5-Lz-wYf" customClass="SelectorTableViewCell" customModule="Bitcoin_Check" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="47.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellIdentifier" id="XV5-Lz-wYf" customClass="SelectorTableViewCell" customModule="Bitcoin_Check" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XV5-Lz-wYf" id="uvP-Fy-s0z">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMB-ax-e2m">
-                                                    <rect key="frame" x="10" y="10" width="355" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="10" y="5" width="355" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPU-h8-DFK">
-                                                    <rect key="frame" x="10" y="30" width="360" height="12.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="10" y="25" width="360" height="14.5"/>
+                                                    <color key="tintColor" red="0.97540313010000002" green="0.63832861190000001" blue="0.01140162162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="tintColor" red="0.97540313010000002" green="0.63832861190000001" blue="0.01140162162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="MMB-ax-e2m" firstAttribute="top" secondItem="uvP-Fy-s0z" secondAttribute="top" constant="10" id="EVm-Lz-4Vc"/>
+                                                <constraint firstItem="MMB-ax-e2m" firstAttribute="top" secondItem="uvP-Fy-s0z" secondAttribute="top" constant="5" id="EVm-Lz-4Vc"/>
                                                 <constraint firstItem="MMB-ax-e2m" firstAttribute="leading" secondItem="uvP-Fy-s0z" secondAttribute="leading" constant="10" id="FAX-zo-zbL"/>
                                                 <constraint firstItem="LPU-h8-DFK" firstAttribute="trailing" secondItem="uvP-Fy-s0z" secondAttribute="trailingMargin" constant="10" id="IKW-E1-sAw"/>
                                                 <constraint firstAttribute="bottom" secondItem="LPU-h8-DFK" secondAttribute="bottom" constant="5" id="Q8y-KB-xXH"/>
@@ -121,7 +127,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="MMB-ax-e2m" secondAttribute="trailing" constant="10" id="yBg-BW-SSP"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="tintColor" red="0.1529411765" green="0.5450980392" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.082352941176470587" green="0.34901960784313724" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="currencyLabel" destination="MMB-ax-e2m" id="bbi-fC-DHi"/>
                                             <outlet property="descriptionLabel" destination="LPU-h8-DFK" id="B5Q-e3-WFW"/>
@@ -134,7 +141,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96862745100000003" green="0.68235294120000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="koY-kl-RsP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KqZ-zp-TMm"/>
                             <constraint firstItem="koY-kl-RsP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QkD-Qq-Jtf"/>
@@ -160,6 +166,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="euJ-ug-7JJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

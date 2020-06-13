@@ -94,14 +94,14 @@ extension CurrencyViewController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: -5, width: 0, height: 0))
 
         titleLabel.backgroundColor = UIColor.clear
-        titleLabel.textColor = UIColor.black
+        titleLabel.textColor = UIColor.white
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel.text = title
         titleLabel.sizeToFit()
 
         let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: 0, height: 0))
         subtitleLabel.backgroundColor = UIColor.clear
-        subtitleLabel.textColor = UIColor.gray
+        subtitleLabel.textColor = UIColor.white
         subtitleLabel.font = UIFont.systemFont(ofSize: 10)
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
