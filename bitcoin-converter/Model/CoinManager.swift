@@ -53,8 +53,9 @@ extension CoinManager {
         
         for (key, value) in dictionary {
             guard let val = value as? Dictionary<String, Any> else { return }
-            guard let valueSafe = val["last"] as? Double else { return }
-            save(currency: key, price: valueSafe)
+            guard let value = val["last"] as? Double else { return }
+            guard let symbol = val["symbol"] as? String else { return }
+            save(currency: key, price: value, symbol: symbol)
         }
     }
     
@@ -66,7 +67,7 @@ extension CoinManager {
         return dateFormatter.string(from: date)
     }
     
-    private func save(currency: String, price: Double) {
+    private func save(currency: String, price: Double, symbol: String) {
         
         var coinEntity: NSManagedObject?
         
@@ -84,6 +85,7 @@ extension CoinManager {
         
         coinEntity?.setValue(currency, forKey: "currency")
         coinEntity?.setValue(price, forKey: "price")
+        coinEntity?.setValue(symbol, forKey: "symbol")
         
         do {
             try context.save()
@@ -92,17 +94,18 @@ extension CoinManager {
         }
     }
     
-    func retrieveData(currency: String) -> String {
+    func retrieveData(currency: String) -> CoinEntity? {
         
         for result in retrieve() {
-            guard let currencyResult = result.currency else { return ""}
+            guard let currencyResult = result.currency else { return result }
             
             if currencyResult == currency {
-                let priceString = toCurrencyFormat(price: result.price)
-                return priceString
+//                let priceString = toCurrencyFormat(price: result.price)
+//                let symbol = result.symbol
+                return result
             }
         }
-        return ""
+        return nil
     }
     
     private func retrieve() -> [CoinEntity] {

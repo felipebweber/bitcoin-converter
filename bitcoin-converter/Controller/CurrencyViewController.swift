@@ -70,8 +70,11 @@ final class CurrencyViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
         let currency = arrayCurrency[indexPath.row]
-        let price = coinManager.retrieveData(currency: currency)
-        cell.setCurrencyLabel(currency, price)
+        let result = coinManager.retrieveData(currency: currency)
+        guard let price = result?.price else { return cell }
+        guard let symbol = result?.symbol else { return cell }
+        cell.symbolImageView.image = UIImage(imageLiteralResourceName: currency.lowercased())
+        cell.setCurrencyLabel(currency, "\(symbol) \(price)")
         return cell
     }
 

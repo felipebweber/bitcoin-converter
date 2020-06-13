@@ -7,7 +7,7 @@
 */
 
 /* Currency e descriptions */
-"usd" = "Dólar BRL";
+"usd" = "Dólar";
 "aud" = "Dólar Australiano";
 "brl" = "Real";
 "cad" = "Dólar Canadense";

@@ -12,6 +12,7 @@ final class CurrencyTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var currencyLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet weak var symbolImageView: UIImageView!
     
     func setCurrencyLabel(_ currency: String,_ price: String) {
         currencyLabel.text = currency
