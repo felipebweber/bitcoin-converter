@@ -50,8 +50,6 @@ extension IAHelper:  SKProductsRequestDelegate {
         let products = response.products
         productsRequestCompletionHandler?(true, products)
         clearRequestAndHandler()
-        
-        print("Nome do produto: \(products.first?.localizedTitle)")
     }
     
     public func request(_ request: SKRequest, didFailWithError error: Error) {
