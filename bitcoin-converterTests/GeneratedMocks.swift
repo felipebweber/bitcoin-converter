@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-06-17 00:28:38 +0000
+// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-06-17 00:43:47 +0000
 
 //
 //  CoinManager.swift

@@ -36,5 +36,5 @@
 "setsubtitle" = "Updated";
 "title" = "No connection";
 "msg" = "Please check your internet connection.";
-"cancel" = "Cancel";
+"cancel" = "Ok";
 "currencysetup" = "Currency setup";
