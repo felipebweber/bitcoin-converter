@@ -30,4 +30,17 @@ class CoinManagerTests: XCTestCase {
         let dateFormatted = date!.formattedHour()
         XCTAssertEqual("6/16/20, 10:44 PM" , dateFormatted)
     }
+    
+    func testCoinManger_whenParsed() {
+        let dictionary: [String: Any] = [ "USD" : ["15m" : 9503.76, "last" : 9503.76, "buy" : 9503.76, "sell" : 9503.76, "symbol" : "$"] ]
+        let usd = "USD"
+        let price = 9503.76
+        let symbol = "$"
+        
+        let listCoin = sut.parseJSON(dictionary)
+        
+        XCTAssertEqual(usd, listCoin.first?.currency)
+        XCTAssertEqual(price, listCoin.first?.value)
+        XCTAssertEqual(symbol, listCoin.first?.symbol)
+    }
 }

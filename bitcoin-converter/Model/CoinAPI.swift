@@ -23,10 +23,10 @@ final class CoinAPI: NSObject {
                 if let responseDictionary = response.value as? Dictionary<String, Any> {
                     completion(true , responseDictionary)
                 }
-                break
+//                break
             case .failure:
                 completion(false, Dictionary<String, Any>())
-                break
+//                break
             }
         }
     }

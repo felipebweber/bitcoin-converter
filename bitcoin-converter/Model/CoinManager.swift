@@ -52,7 +52,7 @@ extension CoinManager {
         
     }
     
-    private func parseJSON(_ dictionary: Dictionary<String, Any>) -> [CoinModel] {
+    internal func parseJSON(_ dictionary: Dictionary<String, Any>) -> [CoinModel] {
         var coinList = [CoinModel]()
         
         for (key, value) in dictionary {
