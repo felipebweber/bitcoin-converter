@@ -30,3 +30,11 @@
 "thb" = "Thai baht";
 "try" = "Turkish lira";
 "twd" = "New Taiwan dollar";
+
+/* Subtitle */
+
+"setsubtitle" = "Updated";
+"title" = "No connection";
+"msg" = "Please check your internet connection.";
+"cancel" = "Cancel";
+"currencysetup" = "Currency setup";

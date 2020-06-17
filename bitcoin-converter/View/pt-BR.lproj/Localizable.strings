@@ -30,3 +30,10 @@
 "thb" = "Bath Tailandês";
 "try" = "Lira Turca";
 "twd" = "Novo Dólar Taiwanês";
+
+/* Subtitle */
+"setsubtitle" = "Atualizado as";
+"title" = "Sem conexão";
+"msg" = "Por favor verifique sua conexão com a internet.";
+"cancel" = "Cancelar";
+"currencysetup" = "Moedas disponíveis";

@@ -21,6 +21,9 @@ final class SelectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let barTitle = NSLocalizedString("currencysetup", comment: "")
+        navigationItem.title = barTitle
+        
         arraySelectCurrency = selectedCurrencyUserDefaults.retrive()
     }
     

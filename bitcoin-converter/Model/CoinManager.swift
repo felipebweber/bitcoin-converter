@@ -12,6 +12,7 @@ import CoreData
 
 protocol CoinManagerDelegate: class {
     func didUpdateFail()
+    func didUpdateData()
 }
 
 final class CoinManager {
@@ -39,6 +40,7 @@ extension CoinManager {
                     print("Date: \(date)")
                     self.selectedCurrencyUserDefaults.setHourUpdate(date: date)
                     self.parseJSON(dictionay)
+                    self.delegate?.didUpdateData()
                 }
             } else {
                 print("Erro de conexão")

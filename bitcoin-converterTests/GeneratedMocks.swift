@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-06-13 05:13:26 +0000
+// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-06-17 00:28:38 +0000
 
 //
 //  CoinManager.swift
@@ -54,6 +54,21 @@ import UIKit
         
     }
     
+    
+    
+     func didUpdateData()  {
+        
+    return cuckoo_manager.call("didUpdateData()",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.didUpdateData())
+        
+    }
+    
 
 	 struct __StubbingProxy_CoinManagerDelegate: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -66,6 +81,11 @@ import UIKit
 	    func didUpdateFail() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return .init(stub: cuckoo_manager.createStub(for: MockCoinManagerDelegate.self, method: "didUpdateFail()", parameterMatchers: matchers))
+	    }
+	    
+	    func didUpdateData() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockCoinManagerDelegate.self, method: "didUpdateData()", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -90,6 +110,12 @@ import UIKit
 	        return cuckoo_manager.verify("didUpdateFail()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
+	    @discardableResult
+	    func didUpdateData() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("didUpdateData()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
 	}
 }
 
@@ -100,6 +126,10 @@ import UIKit
 
     
      func didUpdateFail()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func didUpdateData()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     

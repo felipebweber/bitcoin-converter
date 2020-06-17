@@ -24,8 +24,7 @@ final class CurrencyViewController: UITableViewController {
         coinManager.fetchCoinPrice()
         
         let update = selectedCurrencyUserDefaults.retriveHourUpdate()
-        
-        self.navigationItem.titleView = setTitle(title: "Bitcoin check", subtitle: "Update \(update)")
+        setTitleLocation(updateDate: update)
         coinManager.delegate = self
         
 //        IAProducts.store.requestProducts { (status, products) in
@@ -38,11 +37,7 @@ final class CurrencyViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        let update = selectedCurrencyUserDefaults.retriveHourUpdate()
-//        self.navigationItem.titleView = setTitle(title: "Bitcoin check", subtitle: "Update \(update)")
-        arrayCurrency = selectedCurrencyUserDefaults.retrive()
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
-        tableView.reloadData()
+        updateData()
     }
 
     // MARK: - Table view data source
@@ -89,10 +84,17 @@ extension CurrencyViewController {
 }
 
 extension CurrencyViewController: CoinManagerDelegate {
+    func didUpdateData() {
+        updateData()
+    }
+    
     func didUpdateFail() {
-        let alertController = UIAlertController(title: "Sem conexão", message: "Por favor verifique sua conexão com a internet", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
-        alertController.addAction(cancel)
+        let title = NSLocalizedString("title", comment: "")
+        let msg = NSLocalizedString("msg", comment: "")
+        let cancel = NSLocalizedString("cancel", comment: "")
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let btcancel = UIAlertAction(title: cancel, style: .default, handler: nil)
+        alertController.addAction(btcancel)
         self.present(alertController, animated: true, completion: nil)
     }
 }
@@ -129,6 +131,19 @@ extension CurrencyViewController {
         }
 
         return titleView
+    }
+    
+    private func setTitleLocation(updateDate: String) {
+        let subtitle = NSLocalizedString("setsubtitle", comment: "")
+        self.navigationItem.titleView = setTitle(title: "Bitcoin check", subtitle: "\(subtitle) \(updateDate)")
+    }
+    
+    private func updateData() {
+        let update = selectedCurrencyUserDefaults.retriveHourUpdate()
+        setTitleLocation(updateDate: update)
+        arrayCurrency = selectedCurrencyUserDefaults.retrive()
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.reloadData()
     }
 }
 
