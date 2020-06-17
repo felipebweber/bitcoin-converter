@@ -39,7 +39,8 @@ extension CoinManager {
                     let date = Date().formattedHour()
                     print("Date: \(date)")
                     self.selectedCurrencyUserDefaults.setHourUpdate(date: date)
-                    self.parseJSON(dictionay)
+                    let coinList = self.parseJSON(dictionay)
+                    self.saveAll(coinList)
                     self.delegate?.didUpdateData()
                 }
             } else {
@@ -51,13 +52,21 @@ extension CoinManager {
         
     }
     
-    private func parseJSON(_ dictionary: Dictionary<String, Any>) {
+    private func parseJSON(_ dictionary: Dictionary<String, Any>) -> [CoinModel] {
+        var coinList = [CoinModel]()
         
         for (key, value) in dictionary {
-            guard let val = value as? Dictionary<String, Any> else { return }
-            guard let value = val["last"] as? Double else { return }
-            guard let symbol = val["symbol"] as? String else { return }
-            save(currency: key, price: value, symbol: symbol)
+            guard let val = value as? Dictionary<String, Any> else { return [] }
+            guard let value = val["last"] as? Double else { return [] }
+            guard let symbol = val["symbol"] as? String else { return [] }
+            coinList.append(CoinModel(symbol: symbol, value: value, currency: key))
+        }
+        return coinList
+    }
+    
+    private func saveAll(_ coinList: [CoinModel]) {
+        for coin in coinList {
+            save(currency: coin.currency, price: coin.value, symbol: coin.symbol)
         }
     }
     

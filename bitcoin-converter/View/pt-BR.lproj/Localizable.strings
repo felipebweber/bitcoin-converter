@@ -32,7 +32,7 @@
 "twd" = "Novo Dólar Taiwanês";
 
 /* Subtitle */
-"setsubtitle" = "Atualizado as";
+"setsubtitle" = "Atualizado: ";
 "title" = "Sem conexão";
 "msg" = "Por favor verifique sua conexão com a internet.";
 "cancel" = "Ok";

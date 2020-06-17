@@ -23,10 +23,12 @@
 		55758D52248B2E4000B4FE9D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55758D51248B2E4000B4FE9D /* StoreKit.framework */; };
 		55ACFF0B2492FEEF0076443A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55ACFF0D2492FEEF0076443A /* Localizable.strings */; };
 		55AE83D42481F2F100D97525 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE83D32481F2F100D97525 /* CurrencyViewController.swift */; };
-		55D13A6724773B3C00A56E79 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D13A6624773B3C00A56E79 /* GeneratedMocks.swift */; };
-		55D13A6924773BAF00A56E79 /* CoinManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D13A6824773BAF00A56E79 /* CoinManagerTests.swift */; };
 		55E5E9C2247896BD009B8EBD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5E9C1247896BD009B8EBD /* Config.swift */; };
 		55E5E9C424789BEE009B8EBD /* CoinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5E9C324789BEE009B8EBD /* CoinAPI.swift */; };
+		55EB440F2499A06000053D71 /* ConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB440E2499A06000053D71 /* ConfigTests.swift */; };
+		55EB44112499A2F100053D71 /* CurrencyViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB44102499A2F100053D71 /* CurrencyViewControllerTests.swift */; };
+		55EB44132499A8A800053D71 /* CoinManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB44122499A8A800053D71 /* CoinManagerTests.swift */; };
+		55EB44152499B2AD00053D71 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB44142499B2AD00053D71 /* CoinModel.swift */; };
 		55FB2C4A24905A53002A2CF3 /* SelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB2C4924905A53002A2CF3 /* SelectorTableViewCell.swift */; };
 		9FE7984E11B1A8C54BAC065B /* Pods_bitcoin_converterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF86D8F52321C3EAC57EEBBF /* Pods_bitcoin_converterTests.framework */; };
 		A92273A52479F705008BB896 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92273A42479F705008BB896 /* DatabaseManager.swift */; };
@@ -67,10 +69,12 @@
 		55AE83D32481F2F100D97525 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		55D13A58247730E200A56E79 /* bitcoin-converterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bitcoin-converterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D13A5C247730E200A56E79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55D13A6624773B3C00A56E79 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
-		55D13A6824773BAF00A56E79 /* CoinManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManagerTests.swift; sourceTree = "<group>"; };
 		55E5E9C1247896BD009B8EBD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		55E5E9C324789BEE009B8EBD /* CoinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPI.swift; sourceTree = "<group>"; };
+		55EB440E2499A06000053D71 /* ConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigTests.swift; sourceTree = "<group>"; };
+		55EB44102499A2F100053D71 /* CurrencyViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewControllerTests.swift; sourceTree = "<group>"; };
+		55EB44122499A8A800053D71 /* CoinManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManagerTests.swift; sourceTree = "<group>"; };
+		55EB44142499B2AD00053D71 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		55FB2C4924905A53002A2CF3 /* SelectorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorTableViewCell.swift; sourceTree = "<group>"; };
 		A92273A42479F705008BB896 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		B325508BA74EE27812C2220B /* Pods-bitcoin-converterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitcoin-converterTests.debug.xcconfig"; path = "Target Support Files/Pods-bitcoin-converterTests/Pods-bitcoin-converterTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				5565D200246F6C8B009EABD7 /* CoinManager.swift */,
+				55EB44142499B2AD00053D71 /* CoinModel.swift */,
 				55E5E9C324789BEE009B8EBD /* CoinAPI.swift */,
 				5535B0162487284B007E88E9 /* SelectedCurrencyUserDefaults.swift */,
 			);
@@ -192,8 +197,9 @@
 		55D13A59247730E200A56E79 /* bitcoin-converterTests */ = {
 			isa = PBXGroup;
 			children = (
-				55D13A6624773B3C00A56E79 /* GeneratedMocks.swift */,
-				55D13A6824773BAF00A56E79 /* CoinManagerTests.swift */,
+				55EB440E2499A06000053D71 /* ConfigTests.swift */,
+				55EB44102499A2F100053D71 /* CurrencyViewControllerTests.swift */,
+				55EB44122499A8A800053D71 /* CoinManagerTests.swift */,
 				55D13A5C247730E200A56E79 /* Info.plist */,
 			);
 			path = "bitcoin-converterTests";
@@ -283,6 +289,7 @@
 					};
 					55D13A57247730E200A56E79 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 						TestTargetID = 5565D1D7246F5FD6009EABD7;
 					};
 				};
@@ -442,6 +449,7 @@
 				5565D1E0246F5FD6009EABD7 /* SelectorViewController.swift in Sources */,
 				5535B0192487369A007E88E9 /* CurrencyTableViewCell.swift in Sources */,
 				5565D1DC246F5FD6009EABD7 /* AppDelegate.swift in Sources */,
+				55EB44152499B2AD00053D71 /* CoinModel.swift in Sources */,
 				5565D1DE246F5FD6009EABD7 /* SceneDelegate.swift in Sources */,
 				55E5E9C424789BEE009B8EBD /* CoinAPI.swift in Sources */,
 				55AE83D42481F2F100D97525 /* CurrencyViewController.swift in Sources */,
@@ -453,8 +461,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55D13A6724773B3C00A56E79 /* GeneratedMocks.swift in Sources */,
-				55D13A6924773BAF00A56E79 /* CoinManagerTests.swift in Sources */,
+				55EB440F2499A06000053D71 /* ConfigTests.swift in Sources */,
+				55EB44112499A2F100053D71 /* CurrencyViewControllerTests.swift in Sources */,
+				55EB44132499A8A800053D71 /* CoinManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +671,7 @@
 			baseConfigurationReference = B325508BA74EE27812C2220B /* Pods-bitcoin-converterTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QG5EGL3K8;
 				INFOPLIST_FILE = "bitcoin-converterTests/Info.plist";
@@ -673,6 +683,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-converterTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitcoin Check.app/Bitcoin Check";
@@ -684,6 +695,7 @@
 			baseConfigurationReference = 30F2FE1CBED4D188DC42D55F /* Pods-bitcoin-converterTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QG5EGL3K8;
 				INFOPLIST_FILE = "bitcoin-converterTests/Info.plist";
