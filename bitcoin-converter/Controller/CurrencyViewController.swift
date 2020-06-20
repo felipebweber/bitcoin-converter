@@ -14,8 +14,6 @@ final class CurrencyViewController: UITableViewController {
     private let coinManager = CoinManager()
     private let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
     private var arrayCurrency:[String] = []
-    
-    
 //    var products = [SKProduct]()
 
     override func viewDidLoad() {
@@ -39,14 +37,10 @@ final class CurrencyViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         updateData()
     }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
+    
+    @IBAction func refreshControlValueChanged(_ sender: UIRefreshControl) {
+        coinManager.fetchCoinPrice()
+    }
     
 
 //    @IBAction func buy(_ sender: Any) {
@@ -86,6 +80,7 @@ extension CurrencyViewController {
 extension CurrencyViewController: CoinManagerDelegate {
     func didUpdateData() {
         updateData()
+        refreshControl?.endRefreshing()
     }
     
     func didUpdateFail() {
