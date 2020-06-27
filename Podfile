@@ -5,6 +5,8 @@ target 'bitcoin-converter' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'Alamofire', '~> 5.2'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/AdMob'
 
   # Pods for bitcoin-converter
 

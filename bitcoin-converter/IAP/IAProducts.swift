@@ -10,7 +10,7 @@ import Foundation
 
 public struct IAProducts {
     
-    public static let firstIAP: ProductIdentifier = "com.felipeweber.bitcoin.check.teste.primeira.sempaciencia"
+    public static let firstIAP: ProductIdentifier = "com.felipeweber.bitcoin.check.removebannerbitcoin"
     
     fileprivate static let productIdentifier: Set<ProductIdentifier> = [IAProducts.firstIAP]
     

@@ -8,13 +8,24 @@
 
 import UIKit
 import StoreKit
+import GoogleMobileAds
 
-final class CurrencyViewController: UITableViewController {
+final class CurrencyViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     private let coinManager = CoinManager()
     private let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
     private var arrayCurrency:[String] = []
+    
+    @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
+    
+    var refreshControl = UIRefreshControl()
+    var bannerView: GADBannerView!
 //    var products = [SKProduct]()
+    var statusRequest = false
+    var localizedTitle = ""
+    var localizedDescription = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +36,22 @@ final class CurrencyViewController: UITableViewController {
         setTitleLocation(updateDate: update)
         coinManager.delegate = self
         
+//        tableView.delegate = self
+        tableView.dataSource = self
+        refreshControl.addTarget(self, action: #selector(refreshControlData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+//        refreshControl = self
+        
+        initAdMobBanner()
+        
 //        IAProducts.store.requestProducts { (status, products) in
 //            if status {
 //                guard let products = products else { return }
+//                self.statusRequest = status
+//                guard let title = products.first?.localizedTitle else { return }
+//                self.localizedTitle = title
+//                guard let description = products.first?.localizedDescription else { return }
+//                self.localizedDescription = description
 //                print("Name: \(products)")
 //                self.products = products
 //            }
@@ -38,29 +62,73 @@ final class CurrencyViewController: UITableViewController {
         updateData()
     }
     
-    @IBAction func refreshControlValueChanged(_ sender: UIRefreshControl) {
+    @objc func refreshControlData() {
         coinManager.fetchCoinPrice()
     }
     
-
+    
+    func removeAds() {
+        bannerView.removeFromSuperview()
+    }
+    
 //    @IBAction func buy(_ sender: Any) {
-//        let menu = UIAlertController(title: "Compra", message: "Esta compra remove o banner", preferredStyle: .alert)
-//        
-//        let buy = UIAlertAction(title: "Buy", style: .default, handler: nil)
-//        menu.addAction(buy)
-//        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//        menu.addAction(cancel)
 //
-//        self.present(menu, animated: true, completion: nil)
+//        if statusRequest {
+//            let menu = UIAlertController(title: localizedTitle, message: localizedDescription, preferredStyle: .alert)
+//
+//            let buy = UIAlertAction(title: "Buy", style: .default) { (action) in
+//                guard let buyProduct = self.products.first else { return }
+//                IAProducts.store.buyProduct(buyProduct)
+//            }
+//            menu.addAction(buy)
+////            let buy = UIAlertAction(title: "Buy", style: .default, handler: nil)
+////            menu.addAction(buy)
+//            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//            menu.addAction(cancel)
+//
+//            self.present(menu, animated: true, completion: nil)
+//
+//        }
+//
+//
+//
+//        removeAds()
+//        bottonConstraint.constant = 0
 //    }
     
     
 
 }
 
-extension CurrencyViewController {
+
+extension CurrencyViewController: GADBannerViewDelegate {
+    // MARK: -  ADMOB BANNER
+    func initAdMobBanner() {
+        
+//        let screenWidth = UIScreen.main.bounds.size.width
+//        let screenHeight = UIScreen.main.bounds.size.height
+//        print("width: \(screenWidth)")
+//        print("height: \(screenHeight)")
+        
+        print(view.safeAreaLayoutGuide.heightAnchor)
+        bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+//        bannerView.frame = CGRect(x: 0.0, y: screenHeight-90, width: bannerView.frame.width, height: bannerView.frame.height)
+        
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        self.view.addSubview(bannerView)
+//        navigationController?.view.addSubview(bannerView)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        let guide = view.safeAreaLayoutGuide
+        bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+
+    }
+}
+
+extension CurrencyViewController: UITableViewDataSource {
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
         let currency = arrayCurrency[indexPath.row]
         let result = coinManager.retrieveData(currency: currency)
@@ -72,7 +140,7 @@ extension CurrencyViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayCurrency.count
     }
 }
@@ -80,7 +148,7 @@ extension CurrencyViewController {
 extension CurrencyViewController: CoinManagerDelegate {
     func didUpdateData() {
         updateData()
-        refreshControl?.endRefreshing()
+        refreshControl.endRefreshing()
     }
     
     func didUpdateFail() {

@@ -26,6 +26,8 @@ open class IAHelper: NSObject {
             if purchased {
                 print("Já comprado: \(productIds)")
             } else {
+//                let teste = SKPayment(product: productId)
+//                SKPaymentQueue.default().add(self)
                 print("Ainda não comprado: \(productIds)")
             }
         }
@@ -41,6 +43,12 @@ extension IAHelper {
         productsRequest = SKProductsRequest(productIdentifiers: productIdentifier)
         productsRequest?.delegate = self
         productsRequest?.start()
+    }
+    
+    public func buyProduct(_ product: SKProduct) {
+        print("Name: \(product.localizedTitle)")
+        let payment = SKPayment(product: product)
+        SKPaymentQueue.default().add(payment)
     }
 }
 
@@ -72,12 +80,16 @@ extension IAHelper: SKPaymentTransactionObserver {
                 complete(transaction: transaction)
                 break
             case .failed:
+                print("Failed")
                 break
             case .restored:
+                print("Restored")
                 break
             case .purchasing:
+                print("Purchasing")
                 break
             case .deferred:
+                print("Defered")
                 break
             }
         }
