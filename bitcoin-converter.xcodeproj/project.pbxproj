@@ -636,6 +636,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-check";
 				PRODUCT_NAME = "Bitcoin Check";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -658,6 +659,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-check";
 				PRODUCT_NAME = "Bitcoin Check";
 				PROVISIONING_PROFILE_SPECIFIER = "";
