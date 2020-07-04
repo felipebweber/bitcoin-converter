@@ -14,7 +14,7 @@ final class SelectorViewController: UIViewController {
     @IBOutlet weak var currencySelectorTableView: UITableView!
     
     private let coinManager = CoinManager()
-    private let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
+    private let userDefaultsManager = UserDefaultsManager()
     private var arraySelectCurrency = [String]()
     
     
@@ -24,11 +24,11 @@ final class SelectorViewController: UIViewController {
         let barTitle = NSLocalizedString("currencysetup", comment: "")
         navigationItem.title = barTitle
         
-        arraySelectCurrency = selectedCurrencyUserDefaults.retrive()
+        arraySelectCurrency = userDefaultsManager.retrive()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        selectedCurrencyUserDefaults.save(arraySelectCurrency)
+        userDefaultsManager.save(arraySelectCurrency)
     }
     
 }

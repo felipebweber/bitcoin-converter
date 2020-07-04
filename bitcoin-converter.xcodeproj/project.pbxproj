@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		01F104EF7AB6015DEC7362C7 /* Pods_bitcoin_converter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CEC575F69691E067E1F92C /* Pods_bitcoin_converter.framework */; };
 		551ED094247487970042DBBE /* bitcoin-converter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 551ED092247487970042DBBE /* bitcoin-converter.xcdatamodeld */; };
-		5535B0172487284B007E88E9 /* SelectedCurrencyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5535B0162487284B007E88E9 /* SelectedCurrencyUserDefaults.swift */; };
+		5535B0172487284B007E88E9 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5535B0162487284B007E88E9 /* UserDefaultsManager.swift */; };
 		5535B0192487369A007E88E9 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5535B0182487369A007E88E9 /* CurrencyTableViewCell.swift */; };
 		55485B9524AE8E8D00A76EDB /* CoinDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55485B9424AE8E8D00A76EDB /* CoinDataResponse.swift */; };
 		5565D1DC246F5FD6009EABD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565D1DB246F5FD6009EABD7 /* AppDelegate.swift */; };
@@ -51,7 +51,7 @@
 		30F2FE1CBED4D188DC42D55F /* Pods-bitcoin-converterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitcoin-converterTests.release.xcconfig"; path = "Target Support Files/Pods-bitcoin-converterTests/Pods-bitcoin-converterTests.release.xcconfig"; sourceTree = "<group>"; };
 		42CEC575F69691E067E1F92C /* Pods_bitcoin_converter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bitcoin_converter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		551ED093247487970042DBBE /* bitcoin-converter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "bitcoin-converter.xcdatamodel"; sourceTree = "<group>"; };
-		5535B0162487284B007E88E9 /* SelectedCurrencyUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCurrencyUserDefaults.swift; sourceTree = "<group>"; };
+		5535B0162487284B007E88E9 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		5535B0182487369A007E88E9 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		55485B9424AE8E8D00A76EDB /* CoinDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataResponse.swift; sourceTree = "<group>"; };
 		5565D1D8246F5FD6009EABD7 /* Bitcoin Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bitcoin Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +165,7 @@
 				5565D200246F6C8B009EABD7 /* CoinManager.swift */,
 				55EB44142499B2AD00053D71 /* CoinModel.swift */,
 				55E5E9C324789BEE009B8EBD /* CoinAPI.swift */,
-				5535B0162487284B007E88E9 /* SelectedCurrencyUserDefaults.swift */,
+				5535B0162487284B007E88E9 /* UserDefaultsManager.swift */,
 				55485B9424AE8E8D00A76EDB /* CoinDataResponse.swift */,
 			);
 			path = Model;
@@ -448,7 +448,7 @@
 			files = (
 				A92273A52479F705008BB896 /* DatabaseManager.swift in Sources */,
 				55758D4E248B115700B4FE9D /* IAProducts.swift in Sources */,
-				5535B0172487284B007E88E9 /* SelectedCurrencyUserDefaults.swift in Sources */,
+				5535B0172487284B007E88E9 /* UserDefaultsManager.swift in Sources */,
 				55485B9524AE8E8D00A76EDB /* CoinDataResponse.swift in Sources */,
 				5565D201246F6C8B009EABD7 /* CoinManager.swift in Sources */,
 				55FB2C4A24905A53002A2CF3 /* SelectorTableViewCell.swift in Sources */,

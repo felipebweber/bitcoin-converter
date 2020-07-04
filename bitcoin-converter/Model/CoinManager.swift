@@ -20,7 +20,7 @@ final class CoinManager {
     weak var delegate: CoinManagerDelegate?
     private var coinApi = CoinAPI()
     private var manageResult: NSFetchedResultsController<CoinEntity>?
-    private let  selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
+    private let  userDefaultsManager = UserDefaultsManager()
     
     //Acesso ao contexto
     private var context: NSManagedObjectContext {
@@ -39,7 +39,7 @@ extension CoinManager {
                 DispatchQueue.main.async {
                     let date = Date().formattedHour()
                     print("Date: \(date)")
-                    self.selectedCurrencyUserDefaults.setHourUpdate(date: date)
+                    self.userDefaultsManager.setHourUpdate(date: date)
                     let coinList = self.parseJSON(dictionary)
                     self.saveAll(coinList)
                     self.delegate?.didUpdateData()

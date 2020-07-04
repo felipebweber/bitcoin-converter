@@ -15,7 +15,7 @@ final class CurrencyViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let coinManager = CoinManager()
-    private let selectedCurrencyUserDefaults = SelectedCurrencyUserDefaults()
+    private let userDefaultsManager = UserDefaultsManager()
     private var arrayCurrency:[String] = []
     
     @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
@@ -32,7 +32,7 @@ final class CurrencyViewController: UIViewController {
         
         coinManager.fetchCoinPrice()
         
-        let update = selectedCurrencyUserDefaults.retriveHourUpdate()
+        let update = userDefaultsManager.retriveHourUpdate()
         setTitleLocation(updateDate: update)
         coinManager.delegate = self
         
@@ -144,6 +144,15 @@ extension CurrencyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayCurrency.count
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let lineOfTable = arrayCurrency[indexPath.row]
+            userDefaultsManager.updateData(currency: lineOfTable)
+            arrayCurrency.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 extension CurrencyViewController: CoinManagerDelegate {
@@ -203,9 +212,9 @@ extension CurrencyViewController {
     }
     
     private func updateData() {
-        let update = selectedCurrencyUserDefaults.retriveHourUpdate()
+        let update = userDefaultsManager.retriveHourUpdate()
         setTitleLocation(updateDate: update)
-        arrayCurrency = selectedCurrencyUserDefaults.retrive()
+        arrayCurrency = userDefaultsManager.retrive()
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.reloadData()
     }
