@@ -11,6 +11,7 @@
 		551ED094247487970042DBBE /* bitcoin-converter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 551ED092247487970042DBBE /* bitcoin-converter.xcdatamodeld */; };
 		5535B0172487284B007E88E9 /* SelectedCurrencyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5535B0162487284B007E88E9 /* SelectedCurrencyUserDefaults.swift */; };
 		5535B0192487369A007E88E9 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5535B0182487369A007E88E9 /* CurrencyTableViewCell.swift */; };
+		55485B9524AE8E8D00A76EDB /* CoinDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55485B9424AE8E8D00A76EDB /* CoinDataResponse.swift */; };
 		5565D1DC246F5FD6009EABD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565D1DB246F5FD6009EABD7 /* AppDelegate.swift */; };
 		5565D1DE246F5FD6009EABD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565D1DD246F5FD6009EABD7 /* SceneDelegate.swift */; };
 		5565D1E0246F5FD6009EABD7 /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565D1DF246F5FD6009EABD7 /* SelectorViewController.swift */; };
@@ -21,6 +22,7 @@
 		55758D4E248B115700B4FE9D /* IAProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55758D4D248B115700B4FE9D /* IAProducts.swift */; };
 		55758D50248B169400B4FE9D /* IAHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55758D4F248B169400B4FE9D /* IAHelper.swift */; };
 		55758D52248B2E4000B4FE9D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55758D51248B2E4000B4FE9D /* StoreKit.framework */; };
+		557CC0D724A954B200BF6BFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 557CC0D624A954B200BF6BFA /* GoogleService-Info.plist */; };
 		55ACFF0B2492FEEF0076443A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55ACFF0D2492FEEF0076443A /* Localizable.strings */; };
 		55AE83D42481F2F100D97525 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE83D32481F2F100D97525 /* CurrencyViewController.swift */; };
 		55E5E9C2247896BD009B8EBD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5E9C1247896BD009B8EBD /* Config.swift */; };
@@ -51,6 +53,7 @@
 		551ED093247487970042DBBE /* bitcoin-converter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "bitcoin-converter.xcdatamodel"; sourceTree = "<group>"; };
 		5535B0162487284B007E88E9 /* SelectedCurrencyUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCurrencyUserDefaults.swift; sourceTree = "<group>"; };
 		5535B0182487369A007E88E9 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		55485B9424AE8E8D00A76EDB /* CoinDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataResponse.swift; sourceTree = "<group>"; };
 		5565D1D8246F5FD6009EABD7 /* Bitcoin Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bitcoin Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5565D1DB246F5FD6009EABD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5565D1DD246F5FD6009EABD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		55758D4F248B169400B4FE9D /* IAHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAHelper.swift; sourceTree = "<group>"; };
 		55758D51248B2E4000B4FE9D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		55758D53248B2F3700B4FE9D /* Bitcoin Check.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bitcoin Check.entitlements"; sourceTree = "<group>"; };
+		557CC0D624A954B200BF6BFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		55ACFF0C2492FEEF0076443A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55ACFF0E2492FEF20076443A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		55AE83D32481F2F100D97525 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				5565D1E4246F5FD8009EABD7 /* Assets.xcassets */,
 				5565D1E6246F5FD8009EABD7 /* LaunchScreen.storyboard */,
 				5565D1E9246F5FD8009EABD7 /* Info.plist */,
+				557CC0D624A954B200BF6BFA /* GoogleService-Info.plist */,
 				551ED092247487970042DBBE /* bitcoin-converter.xcdatamodeld */,
 			);
 			path = "bitcoin-converter";
@@ -161,6 +166,7 @@
 				55EB44142499B2AD00053D71 /* CoinModel.swift */,
 				55E5E9C324789BEE009B8EBD /* CoinAPI.swift */,
 				5535B0162487284B007E88E9 /* SelectedCurrencyUserDefaults.swift */,
+				55485B9424AE8E8D00A76EDB /* CoinDataResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 			files = (
 				5565D1E8246F5FD8009EABD7 /* LaunchScreen.storyboard in Resources */,
 				55ACFF0B2492FEEF0076443A /* Localizable.strings in Resources */,
+				557CC0D724A954B200BF6BFA /* GoogleService-Info.plist in Resources */,
 				5565D1E5246F5FD8009EABD7 /* Assets.xcassets in Resources */,
 				5565D1E3246F5FD6009EABD7 /* Main.storyboard in Resources */,
 			);
@@ -442,6 +449,7 @@
 				A92273A52479F705008BB896 /* DatabaseManager.swift in Sources */,
 				55758D4E248B115700B4FE9D /* IAProducts.swift in Sources */,
 				5535B0172487284B007E88E9 /* SelectedCurrencyUserDefaults.swift in Sources */,
+				55485B9524AE8E8D00A76EDB /* CoinDataResponse.swift in Sources */,
 				5565D201246F6C8B009EABD7 /* CoinManager.swift in Sources */,
 				55FB2C4A24905A53002A2CF3 /* SelectorTableViewCell.swift in Sources */,
 				551ED094247487970042DBBE /* bitcoin-converter.xcdatamodeld in Sources */,

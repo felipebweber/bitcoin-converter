@@ -113,8 +113,9 @@ extension CurrencyViewController: GADBannerViewDelegate {
         print(view.safeAreaLayoutGuide.heightAnchor)
         bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
 //        bannerView.frame = CGRect(x: 0.0, y: screenHeight-90, width: bannerView.frame.width, height: bannerView.frame.height)
-        
+        // Testes
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         self.view.addSubview(bannerView)
@@ -216,7 +217,10 @@ extension Double {
         currencyFormat.usesGroupingSeparator = true
         currencyFormat.numberStyle = NumberFormatter.Style.decimal
         currencyFormat.locale = Locale.current
+        currencyFormat.minimumFractionDigits = 2
         guard let priceString = currencyFormat.string(from: NSNumber(value: self)) else { return ""}
         return priceString
     }
 }
+
+

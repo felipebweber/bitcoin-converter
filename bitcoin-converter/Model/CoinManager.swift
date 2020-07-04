@@ -31,15 +31,16 @@ final class CoinManager {
 }
 
 extension CoinManager {
+    
     func fetchCoinPrice() {
         
-        coinApi.fetchCoinRequest { (result ,dictionay) in
+        coinApi.fetchCoinRequest { (result, dictionary) in
             if result {
                 DispatchQueue.main.async {
                     let date = Date().formattedHour()
                     print("Date: \(date)")
                     self.selectedCurrencyUserDefaults.setHourUpdate(date: date)
-                    let coinList = self.parseJSON(dictionay)
+                    let coinList = self.parseJSON(dictionary)
                     self.saveAll(coinList)
                     self.delegate?.didUpdateData()
                 }
@@ -52,17 +53,31 @@ extension CoinManager {
         
     }
     
-    internal func parseJSON(_ dictionary: Dictionary<String, Any>) -> [CoinModel] {
-        var coinList = [CoinModel]()
-        
-        for (key, value) in dictionary {
-            guard let val = value as? Dictionary<String, Any> else { return [] }
-            guard let value = val["last"] as? Double else { return [] }
-            guard let symbol = val["symbol"] as? String else { return [] }
-            coinList.append(CoinModel(symbol: symbol, value: value, currency: key))
+//    private func parseJSON(_ coinData: Data) ->[CoinModel] {
+//
+//        var coinList = [CoinModel]()
+//
+//        let decoder = JSONDecoder()
+//        guard let decodeData = try? decoder.decode(CoinDataResponse.self, from: coinData) else { return [] }
+//
+//        for (key, value) in decodeData.market_data.current_price {
+//            coinList.append(CoinModel(symbol: "opa", value: value, currency: key))
+//        }
+//
+//        return coinList
+//    }
+    
+        internal func parseJSON(_ dictionary: Dictionary<String, Any>) -> [CoinModel] {
+            var coinList = [CoinModel]()
+    
+            for (key, value) in dictionary {
+                guard let val = value as? Dictionary<String, Any> else { return [] }
+                guard let value = val["last"] as? Double else { return [] }
+                guard let symbol = val["symbol"] as? String else { return [] }
+                coinList.append(CoinModel(symbol: symbol, value: value, currency: key))
+            }
+            return coinList
         }
-        return coinList
-    }
     
     private func saveAll(_ coinList: [CoinModel]) {
         for coin in coinList {

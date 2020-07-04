@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>307048481876-1qj1en9a3pkhdk3d3s3gk51ipn1j09mg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.307048481876-1qj1en9a3pkhdk3d3s3gk51ipn1j09mg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyArUlLmxE5H2Bt9fw4Iwf79D5myNib-Puk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>307048481876</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.felipeweber.bitcoin-check</string>
+	<key>PROJECT_ID</key>
+	<string>bitcoin-check</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bitcoin-check.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:307048481876:ios:6d1d5a677fddfdbb1299c1</string>
+	<key>DATABASE_URL</key>
+	<string>https://bitcoin-check.firebaseio.com</string>
+</dict>
+</plist>

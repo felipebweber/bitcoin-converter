@@ -23,11 +23,25 @@ final class CoinAPI: NSObject {
                 if let responseDictionary = response.value as? Dictionary<String, Any> {
                     completion(true , responseDictionary)
                 }
-//                break
             case .failure:
                 completion(false, Dictionary<String, Any>())
-//                break
             }
         }
     }
+    
+//    func fetchCoinRequest(completion: @escaping(Bool, Data) -> Void) {
+//            AF.request(url).responseData { (response) in
+//                switch response.result {
+//                case .success:
+//                    if let responseData = response.data {
+//                        completion(true, responseData)
+//                    }
+////                    break
+//                case .failure:
+//                    completion(false, Data())
+////                    break
+//                }
+//            }
+//
+//        }
 }
