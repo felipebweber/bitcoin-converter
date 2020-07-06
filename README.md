@@ -25,10 +25,35 @@
 * TRY -> Lira Turca
 * TWD -> Novo Dólar Taiwanês
 
+## Primeira versão
 ---
 <h2 align="center">
 <img src="screen-shot/0.png" width="200" height="356" />
 </h2>
+
+## Segunda versão
+---
+<h2 align="center">
+<img src="screen-shot/1.png" width="200" height="356" />
+<img src="screen-shot/2.png" width="200" height="356" />
+</h2>
+
+Segunda versão do App possui duas telas. Uma onde é possivel selecionar quais moedas quer saber o valor do Bitcoin e outra onde é a visualização das moedas selecionadas.
+
+Características:
+- O app possui layout responsivo para os diferentes tamanhos de tela.
+- A formatação das moedas levam em conta a localização do usuário definida nos ajustes do iPhone.
+- Possui suporte para a linguagem pt-br e en.
+- O usuário pode favoritar quais moedas quer saber o valor do Bitcoin.
+- Pull refresh;
+- É possível apagar as moedas selecionadas direto na View principal.
+
+Definições de projeto:
+- Para requisição dos dados foi utilizado a biblioteca Alamofire. 
+- Os dados das moedas como valor, símbolo da moeda e abreviação da moeda foi salvo utilizando banco de dados.
+- As preferências do usuário com as moedas favoritas foi salvo utilizado UserDefaults.
+- O projeto usa a arquitetura MVC.
+
 
 ## 🔖 API
 https://blockchain.info/ticker
