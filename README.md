@@ -1,4 +1,9 @@
 # bitcoin-converter
+
+<p align="center">
+  <a href="https://apps.apple.com/us/app/id1519082431"><img src="https://github.com/felipebweber/assets/blob/master/Download_AppStore.png?raw=true" alt="Bitcoin Check" title="Bitcoin Check"/></a>
+</p>
+
 É um app de consulta do valor de um bitcoin para as sequintes moedas:
 
 * USD -> Dólar
@@ -63,7 +68,7 @@ https://blockchain.info/ticker
 - Twitter at [@fbw_] (https://twitter.com/fbw_)
 - Instagram at [@felipeweber] (https://www.instagram.com/felipeweber)
 - Linkedin at [@felipebweber] (https://www.linkedin.com/in/felipebweber)
-- Twitch at [@felipebweber] (https://www.twitch.tv/felipebweber)
+- Twitch at [@felipebweber] (https://www.twitch.tv/carecadecodar)
 
 
 ## 📧 Contact
