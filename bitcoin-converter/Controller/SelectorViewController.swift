@@ -2,9 +2,6 @@
 //  ViewController.swift
 //  BTConverter
 //
-//  Created by Felipe Weber on 15/05/20.
-//  Copyright © 2020 Felipe Weber. All rights reserved.
-//
 
 import UIKit
 import CoreData

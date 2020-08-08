@@ -1,11 +1,8 @@
-// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-07-14 20:42:14 +0000
+// MARK: - Mocks generated from file: bitcoin-converter/Model/CoinManager.swift at 2020-08-08 00:40:58 +0000
 
 //
 //  CoinManager.swift
 //  BTConverter
-//
-//  Created by Felipe Weber on 15/05/20.
-//  Copyright © 2020 Felipe Weber. All rights reserved.
 //
 
 import Cuckoo

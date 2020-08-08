@@ -32,7 +32,7 @@ extension CoinDataResponse {
         let gbp: Double
         let hkd: Double
         let inr: Double
-//        let isk: Double
+        let isk: Double
         let jpy: Double
         let krw: Double
         let nzd: Double

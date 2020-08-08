@@ -2,9 +2,6 @@
 //  TableViewController.swift
 //  bitcoin-converter
 //
-//  Created by Felipe Weber on 29/05/20.
-//  Copyright © 2020 Felipe Weber. All rights reserved.
-//
 
 import UIKit
 import StoreKit
@@ -15,6 +12,7 @@ final class CurrencyViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let coinManager = CoinManager()
+    private let saveRetrieveData = SaveRetrieveData()
     private let userDefaultsManager = UserDefaultsManager()
     private var arrayCurrency:[String] = []
     
@@ -60,10 +58,13 @@ final class CurrencyViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         updateData()
+        widgetData()
+    }
+    
+    private func widgetData() {
         if let userDefaults = UserDefaults(suiteName: "group.felipeweber.bitcoin-check.widget") {
-            userDefaults.set(arrayCurrency, forKey: "ops")
+            userDefaults.set(arrayCurrency, forKey: "keyArrayCurrency")
         }
-//        UserDefaults.init(suiteName: "group.felipeweber.bitcoin-check.widget")?.setValue(arrayCurrency, forKey: "ops")
     }
     
     @objc func refreshControlData() {
@@ -136,10 +137,10 @@ extension CurrencyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CurrencyTableViewCell
         let currency = arrayCurrency[indexPath.row]
-        let result = coinManager.retrieveData(currency: currency)
+        let result = saveRetrieveData.retrieveData(currency: currency)
         guard let price = result?.price else { return cell }
         guard let symbol = result?.symbol else { return cell }
-        let priceFormat = price.toCurrencyFormat()
+        let priceFormat = Double(price).toCurrencyFormat()
         cell.symbolImageView.image = UIImage(imageLiteralResourceName: currency.lowercased())
         cell.setCurrencyLabel(currency, "\(symbol) \(priceFormat)")
         return cell
@@ -156,6 +157,7 @@ extension CurrencyViewController: UITableViewDataSource {
             arrayCurrency.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+        widgetData()
     }
 }
 
@@ -223,17 +225,3 @@ extension CurrencyViewController {
         tableView.reloadData()
     }
 }
-
-extension Double {
-    func toCurrencyFormat() -> String {
-        let currencyFormat = NumberFormatter()
-        currencyFormat.usesGroupingSeparator = true
-        currencyFormat.numberStyle = NumberFormatter.Style.decimal
-        currencyFormat.locale = Locale.current
-        currencyFormat.minimumFractionDigits = 2
-        guard let priceString = currencyFormat.string(from: NSNumber(value: self)) else { return ""}
-        return priceString
-    }
-}
-
-
