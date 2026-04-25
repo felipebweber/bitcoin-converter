@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 final class CoinAPI: NSObject {
     
@@ -17,31 +16,43 @@ final class CoinAPI: NSObject {
     }()
     
     func fetchCoinRequest(completion: @escaping(Bool ,Dictionary<String, Any>) -> Void) {
-        AF.request(url).responseJSON { (response) in
-            switch response.result {
-            case .success:
-                if let responseDictionary = response.value as? Dictionary<String, Any> {
-                    completion(true , responseDictionary)
+        guard let url = URL(string: url) else {
+            completion(false, Dictionary<String, Any>())
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Network error: \(error)")
+                completion(false, Dictionary<String, Any>())
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                print("Invalid response")
+                completion(false, Dictionary<String, Any>())
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                completion(false, Dictionary<String, Any>())
+                return
+            }
+            
+            do {
+                if let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? Dictionary<String, Any> {
+                    completion(true, jsonDictionary)
+                } else {
+                    print("Invalid JSON format")
+                    completion(false, Dictionary<String, Any>())
                 }
-            case .failure:
+            } catch {
+                print("JSON serialization error: \(error)")
                 completion(false, Dictionary<String, Any>())
             }
         }
+        
+        task.resume()
     }
-    
-//    func fetchCoinRequest(completion: @escaping(Bool, Data) -> Void) {
-//            AF.request(url).responseData { (response) in
-//                switch response.result {
-//                case .success:
-//                    if let responseData = response.data {
-//                        completion(true, responseData)
-//                    }
-////                    break
-//                case .failure:
-//                    completion(false, Data())
-////                    break
-//                }
-//            }
-//
-//        }
 }
