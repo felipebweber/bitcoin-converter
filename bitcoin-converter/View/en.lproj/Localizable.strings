@@ -38,3 +38,7 @@
 "msg" = "Please check your internet connection.";
 "cancel" = "Ok";
 "currencysetup" = "Currency setup";
+
+/* Empty state */
+"no_currencies_selected" = "No currencies selected";
+"no_currencies_selected_description" = "Tap the + button above to start tracking Bitcoin prices in your local currency.";

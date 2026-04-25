@@ -37,3 +37,7 @@
 "msg" = "Por favor verifique sua conexão com a internet.";
 "cancel" = "Ok";
 "currencysetup" = "Moedas disponíveis";
+
+/* Empty state */
+"no_currencies_selected" = "Nenhuma moeda selecionada";
+"no_currencies_selected_description" = "Toque no botão + acima para começar a rastrear preços de Bitcoin na sua moeda local.";

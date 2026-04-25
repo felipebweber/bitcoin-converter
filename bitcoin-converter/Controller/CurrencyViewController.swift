@@ -275,7 +275,7 @@ extension CurrencyViewController {
         // Title
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "No currencies selected"
+        titleLabel.text = NSLocalizedString("no_currencies_selected", comment: "")
         titleLabel.textColor = .white
         titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
         titleLabel.textAlignment = .center
@@ -284,7 +284,7 @@ extension CurrencyViewController {
         // Description
         let descriptionLabel = UILabel()
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.text = "Tap the + button above to start tracking Bitcoin prices in your local currency."
+        descriptionLabel.text = NSLocalizedString("no_currencies_selected_description", comment: "")
         descriptionLabel.textColor = .white.withAlphaComponent(0.7)
         descriptionLabel.font = UIFont.systemFont(ofSize: 15)
         descriptionLabel.textAlignment = .center
