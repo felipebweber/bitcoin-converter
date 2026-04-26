@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -349,7 +349,6 @@
 				5565D1D4246F5FD6009EABD7 /* Sources */,
 				5565D1D5246F5FD6009EABD7 /* Frameworks */,
 				5565D1D6246F5FD6009EABD7 /* Resources */,
-				55D13A632477360B00A56E79 /* Run Script */,
 				4C58786D560C5388154F6D0C /* [CP] Embed Pods Frameworks */,
 				551397D924B9195200B43327 /* Embed App Extensions */,
 			);
@@ -371,7 +370,6 @@
 				55D13A54247730E200A56E79 /* Sources */,
 				55D13A55247730E200A56E79 /* Frameworks */,
 				55D13A56247730E200A56E79 /* Resources */,
-				24CEB952F83AD20A04F28C64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,23 +458,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		24CEB952F83AD20A04F28C64 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converterTests/Pods-bitcoin-converterTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converterTests/Pods-bitcoin-converterTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converterTests/Pods-bitcoin-converterTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4C58786D560C5388154F6D0C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,32 +466,18 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		55D13A632477360B00A56E79 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Model/CoinManager.swift\" \\\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		5638B4D4BC9F1AB91F3EEA80 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -671,7 +638,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QG5EGL3K8;
 				INFOPLIST_FILE = "bitcoin-converter-today-extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -693,7 +660,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QG5EGL3K8;
 				INFOPLIST_FILE = "bitcoin-converter-today-extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -834,11 +801,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QG5EGL3K8;
 				INFOPLIST_FILE = "$(SRCROOT)/bitcoin-converter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-check";
 				PRODUCT_NAME = "Bitcoin Check";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -858,11 +826,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QG5EGL3K8;
 				INFOPLIST_FILE = "$(SRCROOT)/bitcoin-converter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-check";
 				PRODUCT_NAME = "Bitcoin Check";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -880,7 +849,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QG5EGL3K8;
 				INFOPLIST_FILE = "bitcoin-converterTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -904,7 +873,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QG5EGL3K8;
 				INFOPLIST_FILE = "bitcoin-converterTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -17,12 +17,12 @@
 		<key>bitcoin-converter-today-extension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>16</integer>
 		</dict>
 		<key>bitcoin-converter.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>17</integer>
 		</dict>
 		<key>bitcoin-converterTests.xcscheme_^#shared#^_</key>
 		<dict>
@@ -32,6 +32,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>551397CB24B9195200B43327</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5565D1D7246F5FD6009EABD7</key>
 		<dict>
 			<key>primary</key>
