@@ -18,7 +18,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        configureNavigationBarAppearance()
         return true
+    }
+
+    private func configureNavigationBarAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(red: 4/255, green: 88/255, blue: 228/255, alpha: 1)
+        appearance.shadowColor = .clear
+        appearance.titleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont(name: "Avenir-Heavy", size: 17) ?? UIFont.boldSystemFont(ofSize: 17)
+        ]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        let proxy = UINavigationBar.appearance()
+        proxy.standardAppearance = appearance
+        proxy.scrollEdgeAppearance = appearance
+        proxy.compactAppearance = appearance
+        proxy.tintColor = .white
     }
 
     // MARK: UISceneSession Lifecycle
