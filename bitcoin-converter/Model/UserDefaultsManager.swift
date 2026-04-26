@@ -10,6 +10,12 @@ final class UserDefaultsManager {
     
     private let keySetHourUpdate = "setHourUpdate"
     private let keyCurrencySelected = "currencySelected"
+    private let keyHasSeenOnboarding = "hasSeenOnboarding"
+
+    var hasSeenOnboarding: Bool {
+        get { UserDefaults.standard.bool(forKey: keyHasSeenOnboarding) }
+        set { UserDefaults.standard.set(newValue, forKey: keyHasSeenOnboarding) }
+    }
     
     func save(_ arrayCurrecy: [String]) {
         UserDefaults.standard.set(arrayCurrecy, forKey: keyCurrencySelected)

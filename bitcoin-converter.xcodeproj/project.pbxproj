@@ -51,6 +51,9 @@
 		55FB2C4A24905A53002A2CF3 /* SelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB2C4924905A53002A2CF3 /* SelectorTableViewCell.swift */; };
 		9FE7984E11B1A8C54BAC065B /* Pods_bitcoin_converterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF86D8F52321C3EAC57EEBBF /* Pods_bitcoin_converterTests.framework */; };
 		A92273A52479F705008BB896 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92273A42479F705008BB896 /* DatabaseManager.swift */; };
+		AA0100000000000000000B01 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0100000000000000000A01 /* OnboardingPage.swift */; };
+		AA0100000000000000000B02 /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0100000000000000000A02 /* OnboardingContentViewController.swift */; };
+		AA0100000000000000000B03 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0100000000000000000A03 /* OnboardingPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +133,9 @@
 		55EB44142499B2AD00053D71 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		55FB2C4924905A53002A2CF3 /* SelectorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorTableViewCell.swift; sourceTree = "<group>"; };
 		A92273A42479F705008BB896 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		AA0100000000000000000A01 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		AA0100000000000000000A02 /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
+		AA0100000000000000000A03 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		B325508BA74EE27812C2220B /* Pods-bitcoin-converterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitcoin-converterTests.debug.xcconfig"; path = "Target Support Files/Pods-bitcoin-converterTests/Pods-bitcoin-converterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF86D8F52321C3EAC57EEBBF /* Pods_bitcoin_converterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bitcoin_converterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8FB3D520779A137D5BEF19 /* Pods-bitcoin-converter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitcoin-converter.release.xcconfig"; path = "Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +229,7 @@
 				5565D1FE246F605B009EABD7 /* View */,
 				5565D1FF246F6073009EABD7 /* Controller */,
 				A92273A32479F6E3008BB896 /* Manager */,
+				AA0100000000000000000C01 /* Onboarding */,
 				5565D1E4246F5FD8009EABD7 /* Assets.xcassets */,
 				5565D1E6246F5FD8009EABD7 /* LaunchScreen.storyboard */,
 				5565D1E9246F5FD8009EABD7 /* Info.plist */,
@@ -319,6 +326,16 @@
 				55DA966024DE081300FBFD73 /* NSCustomPersistentContainer.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		AA0100000000000000000C01 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				AA0100000000000000000A01 /* OnboardingPage.swift */,
+				AA0100000000000000000A02 /* OnboardingContentViewController.swift */,
+				AA0100000000000000000A03 /* OnboardingPageViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,6 +582,9 @@
 				55E5E9C424789BEE009B8EBD /* CoinAPI.swift in Sources */,
 				55AE83D42481F2F100D97525 /* CurrencyViewController.swift in Sources */,
 				55E5E9C2247896BD009B8EBD /* Config.swift in Sources */,
+				AA0100000000000000000B01 /* OnboardingPage.swift in Sources */,
+				AA0100000000000000000B02 /* OnboardingContentViewController.swift in Sources */,
+				AA0100000000000000000B03 /* OnboardingPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

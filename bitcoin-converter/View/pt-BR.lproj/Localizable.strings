@@ -37,3 +37,14 @@
 "msg" = "Por favor verifique sua conexão com a internet.";
 "cancel" = "Ok";
 "currencysetup" = "Moedas disponíveis";
+
+/* Onboarding */
+"onboarding.slide1.title" = "Bitcoin em tempo real";
+"onboarding.slide1.subtitle" = "Acompanhe a cotação do BTC em várias moedas, atualizada a cada hora.";
+"onboarding.slide2.title" = "Suas moedas favoritas";
+"onboarding.slide2.subtitle" = "Toque em + para escolher quais moedas quer acompanhar.";
+"onboarding.slide3.title" = "Widget na tela inicial";
+"onboarding.slide3.subtitle" = "Veja os preços sem abrir o app — adicione o widget Bitcoin Check.";
+"onboarding.skip" = "Pular";
+"onboarding.next" = "Próximo";
+"onboarding.start" = "Começar";
