@@ -19,7 +19,7 @@ final class CurrencyViewController: UIViewController {
     @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
     
     var refreshControl = UIRefreshControl()
-    var bannerView: GADBannerView!
+    var bannerView: BannerView!
     //    var products = [SKProduct]()
     var statusRequest = false
     var localizedTitle = ""
@@ -106,7 +106,7 @@ final class CurrencyViewController: UIViewController {
 }
 
 
-extension CurrencyViewController: GADBannerViewDelegate {
+extension CurrencyViewController: BannerViewDelegate {
     // MARK: -  ADMOB BANNER
     func initAdMobBanner() {
         
@@ -116,13 +116,13 @@ extension CurrencyViewController: GADBannerViewDelegate {
         //        print("height: \(screenHeight)")
         
         print(view.safeAreaLayoutGuide.heightAnchor)
-        bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView = BannerView(adSize: kGADAdSizeSmartBannerPortrait)
         //        bannerView.frame = CGRect(x: 0.0, y: screenHeight-90, width: bannerView.frame.width, height: bannerView.frame.height)
         // Testes
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         
         bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+        bannerView.load(Request())
         self.view.addSubview(bannerView)
         //        navigationController?.view.addSubview(bannerView)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
