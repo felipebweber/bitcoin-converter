@@ -20,8 +20,6 @@
 	<string>4</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3182185679016297~3869311956</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Used to deliver more relevant ads in this app.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>
