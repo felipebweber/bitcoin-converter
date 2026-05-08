@@ -27,3 +27,6 @@ DerivedData/
 
 # Pods
 Pods/
+
+# Signing assets
+cert/
