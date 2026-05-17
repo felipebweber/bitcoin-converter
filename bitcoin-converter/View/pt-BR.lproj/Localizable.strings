@@ -41,3 +41,13 @@
 /* Empty state */
 "no_currencies_selected" = "Nenhuma moeda selecionada";
 "no_currencies_selected_description" = "Toque no botão + acima para começar a rastrear preços de Bitcoin na sua moeda local.";
+/* Onboarding */
+"onboarding.slide1.title" = "Bitcoin em tempo real";
+"onboarding.slide1.subtitle" = "Acompanhe a cotação do BTC em várias moedas, atualizada a cada hora.";
+"onboarding.slide2.title" = "Suas moedas favoritas";
+"onboarding.slide2.subtitle" = "Toque em + para escolher quais moedas quer acompanhar.";
+"onboarding.slide3.title" = "Widget na tela inicial";
+"onboarding.slide3.subtitle" = "Veja os preços sem abrir o app — adicione o widget Bitcoin Check.";
+"onboarding.skip" = "Pular";
+"onboarding.next" = "Próximo";
+"onboarding.start" = "Começar";
