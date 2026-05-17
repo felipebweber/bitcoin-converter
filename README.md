@@ -54,7 +54,7 @@ Características:
 - É possível apagar as moedas selecionadas direto na View principal.
 
 Definições de projeto:
-- Para requisição dos dados foi utilizado a biblioteca Alamofire. 
+- Para requisição dos dados foi utilizado o nativo URLSession. 
 - Os dados das moedas como valor, símbolo da moeda e abreviação da moeda foi salvo utilizando banco de dados.
 - As preferências do usuário com as moedas favoritas foi salvo utilizado UserDefaults.
 - O projeto usa a arquitetura MVC.

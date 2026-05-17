@@ -365,13 +365,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5565D1F7246F5FD9009EABD7 /* Build configuration list for PBXNativeTarget "bitcoin-converter" */;
 			buildPhases = (
-				96AA85C900DA773381960C25 /* [CP] Check Pods Manifest.lock */,
+				AD320BC5863A0B66930C796B /* [CP] Check Pods Manifest.lock */,
 				5565D1D4246F5FD6009EABD7 /* Sources */,
 				5565D1D5246F5FD6009EABD7 /* Frameworks */,
 				5565D1D6246F5FD6009EABD7 /* Resources */,
+				55D13A632477360B00A56E79 /* Run Script */,
 				551397D924B9195200B43327 /* Embed App Extensions */,
-				2728CDAA9EF2AA50C71EFC68 /* [CP] Embed Pods Frameworks */,
-				6B5E9076B9C1AFD960A621F4 /* [CP] Copy Pods Resources */,
+				14118F2B27113B365712B221 /* [CP] Embed Pods Frameworks */,
+				55A9AE98D85D309B3C943778 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -387,11 +388,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55D13A5F247730E200A56E79 /* Build configuration list for PBXNativeTarget "bitcoin-converterTests" */;
 			buildPhases = (
-				7BF8EABD06557511A6FE09C7 /* [CP] Check Pods Manifest.lock */,
+				47E1812FD2F93D93570D1E0D /* [CP] Check Pods Manifest.lock */,
 				55D13A54247730E200A56E79 /* Sources */,
 				55D13A55247730E200A56E79 /* Frameworks */,
 				55D13A56247730E200A56E79 /* Resources */,
-				B622EF7A16C1B517B6C6A6F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -481,7 +481,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2728CDAA9EF2AA50C71EFC68 /* [CP] Embed Pods Frameworks */ = {
+		14118F2B27113B365712B221 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -498,24 +498,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6B5E9076B9C1AFD960A621F4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7BF8EABD06557511A6FE09C7 /* [CP] Check Pods Manifest.lock */ = {
+		47E1812FD2F93D93570D1E0D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -537,7 +520,42 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		96AA85C900DA773381960C25 /* [CP] Check Pods Manifest.lock */ = {
+		55A9AE98D85D309B3C943778 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitcoin-converter/Pods-bitcoin-converter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55D13A632477360B00A56E79 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Cuckoo mock generation removed - shell script placeholder";
+		};
+		AD320BC5863A0B66930C796B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -703,7 +721,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-check.bitcoin-converter-today-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -725,7 +743,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-check.bitcoin-converter-today-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -781,7 +799,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -836,7 +854,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -850,7 +868,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 093E635AE8D12BCDFD530BC6 /* Pods-bitcoin-converter.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "bitcoin-converter/Bitcoin Check.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -866,7 +883,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-check";
 				PRODUCT_NAME = "Bitcoin Check";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -875,7 +892,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F6FB6455E489846C868CBA29 /* Pods-bitcoin-converter.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "bitcoin-converter/Bitcoin Check.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -891,7 +907,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-check";
 				PRODUCT_NAME = "Bitcoin Check";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -914,7 +930,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-converterTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitcoin Check.app/Bitcoin Check";
 			};
@@ -937,7 +953,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.felipeweber.bitcoin-converterTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitcoin Check.app/Bitcoin Check";
 			};

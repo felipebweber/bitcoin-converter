@@ -7,7 +7,7 @@ import Foundation
 import  UIKit
 import CoreData
 
-protocol CoinManagerDelegate: class {
+protocol CoinManagerDelegate: AnyObject {
     func didUpdateFail()
     func didUpdateData()
 }

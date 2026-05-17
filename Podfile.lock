@@ -1,15 +1,4 @@
 PODS:
-  - Alamofire (5.11.2)
-  - Cuckoo (2.2.1):
-    - Cuckoo/Swift (= 2.2.1)
-  - Cuckoo/Swift (2.2.1)
-  - Firebase/Analytics (12.12.1):
-    - Firebase/Core
-  - Firebase/Core (12.12.1):
-    - Firebase/CoreOnly
-    - FirebaseAnalytics (~> 12.12.1)
-  - Firebase/CoreOnly (12.12.1):
-    - FirebaseCore (~> 12.12.1)
   - FirebaseAnalytics (12.12.1):
     - FirebaseAnalytics/Default (= 12.12.1)
     - FirebaseCore (~> 12.12.0)
@@ -104,16 +93,11 @@ PODS:
   - PromisesObjC (2.4.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - Cuckoo
-  - Firebase/Analytics
+  - FirebaseAnalytics
   - Google-Mobile-Ads-SDK
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - Cuckoo
-    - Firebase
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseCoreInternal
@@ -127,9 +111,6 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
-  Alamofire: 400275dd1c6d87d95a041861d2a59da4b520a203
-  Cuckoo: 567ba11cf216abde8312d3e81c99158def4db6eb
-  Firebase: 14f11e91129d246a8a6166b4c1c2ea61b56806ec
   FirebaseAnalytics: a5f875a3cb86be4b4b5a8c0c4a8cb8d6d99d2de9
   FirebaseCore: 86241206e656f5c80c995e370e6c975913b9b284
   FirebaseCoreInternal: 7c12fc3011d889085e765e317d7b9fd1cef97af9
@@ -142,6 +123,6 @@ SPEC CHECKSUMS:
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
 
-PODFILE CHECKSUM: b0ccaee5d04176558bf9cec42c9303bd5455ff55
+PODFILE CHECKSUM: 179d98b6e2a96e8138e7443ce1a8c8f2af61287f
 
 COCOAPODS: 1.16.2

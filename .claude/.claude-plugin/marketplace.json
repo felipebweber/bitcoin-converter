@@ -1,0 +1,205 @@
+{
+  "name": "Swift Skills Marketplace",
+  "description": "A curated collection of Swift and iOS development skills for Claude Code",
+  "owner": {
+    "name": "Swift Skills Team"
+  },
+  "plugins": [
+    {
+      "name": "swiftui-pro",
+      "source": "github",
+      "repo": "twostraws/SwiftUI-Agent-Skill",
+      "description": "Expert SwiftUI development skills by Paul Hudson",
+      "version": "latest"
+    },
+    {
+      "name": "swiftui-ui-patterns",
+      "source": "github",
+      "repo": "Dimillian/Skills",
+      "description": "SwiftUI UI Patterns skills by Thomas Ricouard",
+      "version": "latest"
+    },
+    {
+      "name": "swiftui-design-principles",
+      "source": "github",
+      "repo": "arjitj2/swiftui-design-principles",
+      "description": "SwiftUI Design Principles skills by Arjit Jaiswal",
+      "version": "latest"
+    },
+    {
+      "name": "swiftui-view-refactor",
+      "source": "github",
+      "repo": "Dimillian/Skills",
+      "description": "SwiftUI View Refactor skills by Thomas Ricouard",
+      "version": "latest"
+    },
+    {
+      "name": "swiftdata-pro",
+      "source": "github",
+      "repo": "twostraws/SwiftData-Agent-Skill",
+      "description": "SwiftData proficiency skills by Paul Hudson",
+      "version": "latest"
+    },
+    {
+      "name": "swiftdata-expert",
+      "source": "github",
+      "repo": "vanab/swiftdata-agent-skill",
+      "description": "SwiftData Expert skills by Kudrin Dmitry",
+      "version": "latest"
+    },
+    {
+      "name": "swift-concurrency-pro",
+      "source": "github",
+      "repo": "twostraws/Swift-Concurrency-Agent-Skill",
+      "description": "Swift concurrency mastery skills by Paul Hudson",
+      "version": "latest"
+    },
+    {
+      "name": "swift-concurrency-expert-dimillian",
+      "source": "github",
+      "repo": "Dimillian/Skills",
+      "description": "Swift Concurrency Expert skills by Thomas Ricouard",
+      "version": "latest"
+    },
+    {
+      "name": "swift-concurrency-expert-avdlee",
+      "source": "github",
+      "repo": "AvdLee/Swift-Concurrency-Agent-Skill",
+      "description": "Swift Concurrency Expert skills by Antoine van der Lee",
+      "version": "latest"
+    },
+    {
+      "name": "swift-testing-pro",
+      "source": "github",
+      "repo": "twostraws/Swift-Testing-Agent-Skill",
+      "description": "Swift testing expertise skills by Paul Hudson",
+      "version": "latest"
+    },
+    {
+      "name": "swift-testing-agent",
+      "source": "github",
+      "repo": "bocato/swift-testing-agent-skill",
+      "description": "Swift Testing Agent skills by Eduardo Bocato",
+      "version": "latest"
+    },
+    {
+      "name": "swift-testing-expert",
+      "source": "github",
+      "repo": "AvdLee/Swift-Testing-Agent-Skill",
+      "description": "Swift Testing Expert skills by Antoine van der Lee",
+      "version": "latest"
+    },
+    {
+      "name": "swift-api-design-guidelines",
+      "source": "github",
+      "repo": "Erikote04/Swift-API-Design-Guidelines-Agent-Skill",
+      "description": "Swift API Design Guidelines skills by Erik Sebastián de Erice",
+      "version": "latest"
+    },
+    {
+      "name": "swift-formatstyle",
+      "source": "github",
+      "repo": "n0an/Swift-FormatStyle-Agent-Skill",
+      "description": "Swift FormatStyle skills by Anton Novoselov",
+      "version": "latest"
+    },
+    {
+      "name": "ios-accessibility",
+      "source": "github",
+      "repo": "dadederk/iOS-Accessibility-Agent-Skill",
+      "description": "iOS accessibility development skills by Daniel Devesa",
+      "version": "latest"
+    },
+    {
+      "name": "swift-accessibility",
+      "source": "github",
+      "repo": "PasqualeVittoriosi/swift-accessibility-skill",
+      "description": "Swift accessibility skills by Pasquale Vittoriosi",
+      "version": "latest"
+    },
+    {
+      "name": "apple-accessibility",
+      "source": "github",
+      "repo": "rgmez/apple-accessibility-skills",
+      "description": "Apple accessibility skills by Roberto Gómez Muñoz",
+      "version": "latest"
+    },
+    {
+      "name": "app-store-connect-cli",
+      "source": "github",
+      "repo": "rudrankriyam/app-store-connect-cli-skills",
+      "description": "App Store Connect CLI skills by Rudrank Riyam",
+      "version": "latest"
+    },
+    {
+      "name": "app-store-changelog",
+      "source": "github",
+      "repo": "Dimillian/Skills",
+      "description": "App Store Changelog skills by Thomas Ricouard",
+      "version": "latest"
+    },
+    {
+      "name": "app-store-aso-optimization",
+      "source": "github",
+      "repo": "timbroddin/app-store-aso-skill",
+      "description": "App Store ASO Optimization skills by Tim Broddin",
+      "version": "latest"
+    },
+    {
+      "name": "swift-architecture",
+      "source": "github",
+      "repo": "efremidze/swift-architecture-skill",
+      "description": "Swift architecture pattern skills by Lasha Efremidze",
+      "version": "latest"
+    },
+    {
+      "name": "core-data-expert",
+      "source": "github",
+      "repo": "AvdLee/Core-Data-Agent-Skill",
+      "description": "Core Data development skills by Antoine van der Lee",
+      "version": "latest"
+    },
+    {
+      "name": "swift-focusengine-pro",
+      "source": "github",
+      "repo": "mhaviv/Swift-FocusEngine-Agent-Skill",
+      "description": "Swift Focus Engine management skills by Michael Haviv",
+      "version": "latest"
+    },
+    {
+      "name": "swiftui-performance-audit",
+      "source": "github",
+      "repo": "Dimillian/Skills",
+      "description": "SwiftUI Performance Audit skills by Thomas Ricouard",
+      "version": "latest"
+    },
+    {
+      "name": "swift-security-expert",
+      "source": "github",
+      "repo": "ivan-magda/swift-security-skill",
+      "description": "Swift security best practices skills by Ivan Magda",
+      "version": "latest"
+    },
+    {
+      "name": "ios-simulator",
+      "source": "github",
+      "repo": "conorluddy/ios-simulator-skill",
+      "description": "iOS Simulator tool skills by Conor Luddy",
+      "version": "latest"
+    },
+    {
+      "name": "figma-to-swiftui",
+      "source": "github",
+      "repo": "daetojemax/figma-to-swiftui-skill",
+      "description": "Figma to SwiftUI conversion skills by Ermolaev Maxim",
+      "version": "latest"
+    },
+    {
+      "name": "writing-for-interfaces",
+      "source": "github",
+      "repo": "andrewgleave/skills",
+      "description": "User interface writing skills by Andrew Gleave",
+      "version": "latest"
+    }
+  ]
+}

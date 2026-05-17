@@ -38,6 +38,9 @@
 "cancel" = "Ok";
 "currencysetup" = "Moedas disponíveis";
 
+/* Empty state */
+"no_currencies_selected" = "Nenhuma moeda selecionada";
+"no_currencies_selected_description" = "Toque no botão + acima para começar a rastrear preços de Bitcoin na sua moeda local.";
 /* Onboarding */
 "onboarding.slide1.title" = "Bitcoin em tempo real";
 "onboarding.slide1.subtitle" = "Acompanhe a cotação do BTC em várias moedas, atualizada a cada hora.";

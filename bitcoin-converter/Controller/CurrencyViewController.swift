@@ -5,7 +5,7 @@
 
 import UIKit
 import StoreKit
-import GoogleMobileAds
+ import GoogleMobileAds
 
 final class CurrencyViewController: UIViewController {
     
@@ -73,7 +73,7 @@ final class CurrencyViewController: UIViewController {
     
     
     func removeAds() {
-        bannerView.removeFromSuperview()
+         bannerView.removeFromSuperview()
     }
     
     //    @IBAction func buy(_ sender: Any) {
@@ -97,10 +97,9 @@ final class CurrencyViewController: UIViewController {
     //
     //
     //
-    //        removeAds()
-    //        bottonConstraint.constant = 0
-    //    }
-    
+//        removeAds()
+//        bottonConstraint.constant = 0
+//    }
     
     
 }
@@ -116,6 +115,8 @@ extension CurrencyViewController: BannerViewDelegate {
         //        print("height: \(screenHeight)")
         
         print(view.safeAreaLayoutGuide.heightAnchor)
+        
+        
         bannerView = BannerView(adSize: kGADAdSizeSmartBannerPortrait)
         //        bannerView.frame = CGRect(x: 0.0, y: screenHeight-90, width: bannerView.frame.width, height: bannerView.frame.height)
         // Testes
@@ -130,6 +131,7 @@ extension CurrencyViewController: BannerViewDelegate {
         bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
         
     }
+    
 }
 
 extension CurrencyViewController: UITableViewDataSource {
@@ -140,10 +142,29 @@ extension CurrencyViewController: UITableViewDataSource {
         let result = saveRetrieveData.retrieveData(currency: currency)
         guard let price = result?.price else { return cell }
         guard let symbol = result?.symbol else { return cell }
+        let currencySymbol = getSymbol(forCurrencyCode: symbol)
+
         let priceFormat = Double(price).toCurrencyFormat()
         cell.symbolImageView.image = UIImage(imageLiteralResourceName: currency.lowercased())
-        cell.setCurrencyLabel(currency, "\(symbol) \(priceFormat)")
+        cell.setCurrencyLabel(currency, "\(currencySymbol ?? symbol) \(priceFormat)")
         return cell
+    }
+    
+    func getSymbol(forCurrencyCode code: String) -> String? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        // Find a locale that uses this currency code
+        let localeId = Locale.availableIdentifiers.first(where: {
+            Locale(identifier: $0).currencyCode == code
+        })
+        
+        if let localeId = localeId {
+            formatter.locale = Locale(identifier: localeId)
+            return formatter.currencySymbol
+        }
+        
+        return nil
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -221,7 +242,79 @@ extension CurrencyViewController {
         let update = userDefaultsManager.retriveHourUpdate()
         setTitleLocation(updateDate: update)
         arrayCurrency = userDefaultsManager.retrive()
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        if arrayCurrency.isEmpty {
+            showEmptyState()
+        } else {
+            tableView.tableFooterView = UIView(frame: CGRect.zero)
+            tableView.backgroundView = nil
+        }
+        
         tableView.reloadData()
+    }
+    
+    private func showEmptyState() {
+        let emptyView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
+        
+        // Background
+        emptyView.backgroundColor = .systemBlue
+        
+        // Main container
+        let mainContainer = UIView()
+        mainContainer.translatesAutoresizingMaskIntoConstraints = false
+        emptyView.addSubview(mainContainer)
+        
+        // Icon
+        let iconView = UIImageView()
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+        iconView.image = UIImage(systemName: "currency.exchange")
+        iconView.tintColor = .white.withAlphaComponent(0.5)
+        iconView.contentMode = .scaleAspectFit
+        mainContainer.addSubview(iconView)
+        
+        // Title
+        let titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.text = NSLocalizedString("no_currencies_selected", comment: "")
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        titleLabel.textAlignment = .center
+        mainContainer.addSubview(titleLabel)
+        
+        // Description
+        let descriptionLabel = UILabel()
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.text = NSLocalizedString("no_currencies_selected_description", comment: "")
+        descriptionLabel.textColor = .white.withAlphaComponent(0.7)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 15)
+        descriptionLabel.textAlignment = .center
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.lineBreakMode = .byWordWrapping
+        mainContainer.addSubview(descriptionLabel)
+        
+        // Add constraints
+        NSLayoutConstraint.activate([
+            mainContainer.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor),
+            mainContainer.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor),
+            mainContainer.leadingAnchor.constraint(equalTo: emptyView.leadingAnchor, constant: 16),
+            mainContainer.trailingAnchor.constraint(equalTo: emptyView.trailingAnchor, constant: -16),
+            
+            iconView.topAnchor.constraint(equalTo: mainContainer.topAnchor),
+            iconView.centerXAnchor.constraint(equalTo: mainContainer.centerXAnchor),
+            iconView.widthAnchor.constraint(equalToConstant: 96),
+            iconView.heightAnchor.constraint(equalToConstant: 96),
+            
+            titleLabel.topAnchor.constraint(equalTo: iconView.bottomAnchor, constant: 8),
+            titleLabel.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            descriptionLabel.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor),
+            descriptionLabel.bottomAnchor.constraint(equalTo: mainContainer.bottomAnchor)
+        ])
+        
+        tableView.backgroundView = emptyView
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 }

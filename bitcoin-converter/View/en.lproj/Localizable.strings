@@ -39,6 +39,9 @@
 "cancel" = "Ok";
 "currencysetup" = "Currency setup";
 
+/* Empty state */
+"no_currencies_selected" = "No currencies selected";
+"no_currencies_selected_description" = "Tap the + button above to start tracking Bitcoin prices in your local currency.";
 /* Onboarding */
 "onboarding.slide1.title" = "Bitcoin in real time";
 "onboarding.slide1.subtitle" = "Track BTC prices across many fiat currencies, refreshed every hour.";

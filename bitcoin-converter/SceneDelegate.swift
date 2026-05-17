@@ -11,28 +11,68 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    private var userDefaultsManager = UserDefaultsManager()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = scene as? UIWindowScene else { return }
-
-        let userDefaultsManager = UserDefaultsManager()
-        guard !userDefaultsManager.hasSeenOnboarding else { return }
-
+        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
+        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
+        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
         let window = UIWindow(windowScene: windowScene)
-        let onboarding = OnboardingPageViewController()
-        onboarding.onFinish = { [weak self, weak window] in
-            UserDefaultsManager().hasSeenOnboarding = true
-            guard let window = window,
-                  let main = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() else { return }
-            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                window.rootViewController = main
-            }, completion: nil)
-            _ = self
-        }
-        window.rootViewController = onboarding
-        window.makeKeyAndVisible()
         self.window = window
+        
+        // Configure global navigation bar appearance
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .orange
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barStyle = .black
+        
+        // Configure table view selection color
+        let selectedBackgroundView = UIView()
+        selectedBackgroundView.backgroundColor = .orange
+        UITableViewCell.appearance().selectedBackgroundView = selectedBackgroundView
+        
+        // Setup onboarding flow
+        setupOnboardingFlow()
+    }
+    
+    private func setupOnboardingFlow() {
+        if !userDefaultsManager.hasSeenOnboarding {
+            // Show onboarding first
+            let onboardingVC = OnboardingPageViewController()
+            onboardingVC.onFinish = { [weak self] in
+                // Mark onboarding as completed
+                self?.userDefaultsManager.hasSeenOnboarding = true
+                // Setup main app flow
+                self?.setupMainAppFlow()
+            }
+            
+            let navigationController = UINavigationController(rootViewController: onboardingVC)
+            window?.rootViewController = navigationController
+            window?.makeKeyAndVisible()
+        } else {
+            // Skip to main app
+            setupMainAppFlow()
+        }
+    }
+    
+    private func setupMainAppFlow() {
+        // Load the main storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Get the main navigation controller
+        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        
+        // Set as root view controller
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -63,6 +103,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-
