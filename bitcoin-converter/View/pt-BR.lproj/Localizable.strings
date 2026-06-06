@@ -37,6 +37,9 @@
 "msg" = "Por favor verifique sua conexão com a internet.";
 "cancel" = "Ok";
 "currencysetup" = "Moedas disponíveis";
+"refresh_pull_prompt" = "Puxe para atualizar";
+"refresh_release_prompt" = "Solte para atualizar";
+"refresh_loading_prompt" = "Atualizando preços";
 
 /* Empty state */
 "no_currencies_selected" = "Nenhuma moeda selecionada";

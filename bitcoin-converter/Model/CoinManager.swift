@@ -44,7 +44,9 @@ extension CoinManager {
                 }
             } else {
                 print("Erro de conexão")
-                self.delegate?.didUpdateFail()
+                DispatchQueue.main.async {
+                    self.delegate?.didUpdateFail()
+                }
             }
             
         }

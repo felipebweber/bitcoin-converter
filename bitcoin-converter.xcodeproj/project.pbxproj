@@ -43,6 +43,7 @@
 		55E3435324BE3239006A0612 /* WidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E3435224BE3239006A0612 /* WidgetTableViewCell.swift */; };
 		55E5E9C2247896BD009B8EBD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5E9C1247896BD009B8EBD /* Config.swift */; };
 		55E5E9C424789BEE009B8EBD /* CoinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5E9C324789BEE009B8EBD /* CoinAPI.swift */; };
+		7A8B9C0D1E2F3A4B5C6D7E8F /* PullToRefreshLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B9C0D1E2F3A4B5C6D7E8E /* PullToRefreshLoaderView.swift */; };
 		55EB440F2499A06000053D71 /* ConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB440E2499A06000053D71 /* ConfigTests.swift */; };
 		55EB44112499A2F100053D71 /* CurrencyViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB44102499A2F100053D71 /* CurrencyViewControllerTests.swift */; };
 		55EB44132499A8A800053D71 /* CoinManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EB44122499A8A800053D71 /* CoinManagerTests.swift */; };
@@ -127,6 +128,7 @@
 		55E3435224BE3239006A0612 /* WidgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTableViewCell.swift; sourceTree = "<group>"; };
 		55E5E9C1247896BD009B8EBD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		55E5E9C324789BEE009B8EBD /* CoinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPI.swift; sourceTree = "<group>"; };
+		7A8B9C0D1E2F3A4B5C6D7E8E /* PullToRefreshLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefreshLoaderView.swift; sourceTree = "<group>"; };
 		55EB440E2499A06000053D71 /* ConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigTests.swift; sourceTree = "<group>"; };
 		55EB44102499A2F100053D71 /* CurrencyViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewControllerTests.swift; sourceTree = "<group>"; };
 		55EB44122499A8A800053D71 /* CoinManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManagerTests.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				55E5E9C1247896BD009B8EBD /* Config.swift */,
+				7A8B9C0D1E2F3A4B5C6D7E8E /* PullToRefreshLoaderView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				55E5E9C424789BEE009B8EBD /* CoinAPI.swift in Sources */,
 				55AE83D42481F2F100D97525 /* CurrencyViewController.swift in Sources */,
 				55E5E9C2247896BD009B8EBD /* Config.swift in Sources */,
+				7A8B9C0D1E2F3A4B5C6D7E8F /* PullToRefreshLoaderView.swift in Sources */,
 				AA0100000000000000000B01 /* OnboardingPage.swift in Sources */,
 				AA0100000000000000000B02 /* OnboardingContentViewController.swift in Sources */,
 				AA0100000000000000000B03 /* OnboardingPageViewController.swift in Sources */,

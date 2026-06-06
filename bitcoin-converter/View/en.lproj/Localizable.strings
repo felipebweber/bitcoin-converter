@@ -38,6 +38,9 @@
 "msg" = "Please check your internet connection.";
 "cancel" = "Ok";
 "currencysetup" = "Currency setup";
+"refresh_pull_prompt" = "Pull to refresh";
+"refresh_release_prompt" = "Release to refresh";
+"refresh_loading_prompt" = "Refreshing prices";
 
 /* Empty state */
 "no_currencies_selected" = "No currencies selected";
