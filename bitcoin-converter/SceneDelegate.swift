@@ -26,18 +26,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Configure global navigation bar appearance
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .orange
+        appearance.backgroundColor = .bitcoinOrange
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().barStyle = .black
-        
-        // Configure table view selection color
-        let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = .orange
-        UITableViewCell.appearance().selectedBackgroundView = selectedBackgroundView
         
         // Setup onboarding flow
         setupOnboardingFlow()

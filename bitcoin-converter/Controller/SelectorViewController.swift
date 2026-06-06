@@ -38,39 +38,32 @@ extension SelectorViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! SelectorTableViewCell
         let currency = coinManager.currentArray[indexPath.row]
-        
-        if arraySelectCurrency.contains(currency) {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
-        
-        let description = NSLocalizedString(currency.lowercased(), comment: "")
 
+        let description = NSLocalizedString(currency.lowercased(), comment: "")
         cell.setSelectorLabel(currency, description)
+        cell.applySelectionState(isSelectedItem: arraySelectCurrency.contains(currency), animated: false)
         return cell
     }
 }
 
 extension SelectorViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? SelectorTableViewCell else { return }
+        let lineOfTable = coinManager.currentArray[indexPath.row]
+
         if cell.accessoryType == .none {
-            cell.accessoryType = .checkmark
-            let lineOfTable = coinManager.currentArray[indexPath.row]
             arraySelectCurrency.append(lineOfTable)
         } else {
-            cell.accessoryType = .none
-            let item = coinManager.currentArray[indexPath.row]
             let filter = arraySelectCurrency.filter { (currency) -> Bool in
-                if item != currency {
+                if lineOfTable != currency {
                     return true
                 }
                 return false
             }
             arraySelectCurrency = filter
         }
+
+        cell.applySelectionState(isSelectedItem: arraySelectCurrency.contains(lineOfTable), animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
-

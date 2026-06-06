@@ -22,12 +22,12 @@ final class OnboardingContentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 27/255, green: 31/255, blue: 94/255, alpha: 1)
+        view.backgroundColor = .bitcoinBlue
 
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = UIColor(red: 245/255, green: 150/255, blue: 0/255, alpha: 1)
+        imageView.tintColor = .bitcoinOrange
         if page.isSystemImage {
             let config = UIImage.SymbolConfiguration(pointSize: 120, weight: .regular)
             imageView.image = UIImage(systemName: page.imageName, withConfiguration: config)

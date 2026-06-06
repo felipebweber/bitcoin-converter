@@ -257,7 +257,7 @@ extension CurrencyViewController {
         let emptyView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
         
         // Background
-        emptyView.backgroundColor = .systemBlue
+        emptyView.backgroundColor = .bitcoinBlue
         
         // Main container
         let mainContainer = UIView()

@@ -25,8 +25,8 @@ final class OnboardingPageViewController: UIViewController {
     private let skipButton = UIButton(type: .system)
     private let primaryButton = UIButton(type: .system)
 
-    private let backgroundColor = UIColor(red: 27/255, green: 31/255, blue: 94/255, alpha: 1)
-    private let accentColor = UIColor(red: 245/255, green: 150/255, blue: 0/255, alpha: 1)
+    private let backgroundColor = UIColor.bitcoinBlue
+    private let accentColor = UIColor.bitcoinOrange
 
     override func viewDidLoad() {
         super.viewDidLoad()
